@@ -1,0 +1,57 @@
+## Spider VPS — fix needed for SSH access
+
+Connection from this VPS to Spider on `:46` times out. Either firewall
+or port. **What to tell the Claude inside Spider:**
+
+```
+This is the cebra VPS asking for SSH access.
+
+Public IPs:
+  IPv4: 84.247.128.211
+  IPv6: 2a02:c207:2312:1631::1
+
+Please:
+1. Confirm SSH is on port 46:    sudo ss -tlnp | grep -E ':22|:46'
+   (if it's actually on 22, tell me — I'll update memory m-174)
+2. List firewall rules:          sudo firewall-cmd --list-all
+   (or:                          sudo nft list ruleset)
+3. Allow this VPS's IPv4 on the SSH port:
+     sudo firewall-cmd --permanent --add-rich-rule='rule family="ipv4"
+       source address="84.247.128.211/32" port port="46" protocol="tcp" accept'
+     sudo firewall-cmd --reload
+4. Confirm with:                 sudo firewall-cmd --list-rich-rules
+5. Tell cebra to retry.
+```
+
+Once I'm in, I only need one inspection round to grab listmonk URL +
+list UUID, then I drop SSH for good (per `m-133` one-AI-per-blast-radius).
+
+## soswitch.com (without the V) — separate task
+
+Holds: registered, with email DNS already wired (MX, DKIM, DMARC,
+SPF on Infomaniak), but no site DNS. **Will not be renewed in a year.**
+
+Pending decision: simplest path is Infomaniak DNS-level URL forwarding
+(soswitch.com → sovswitch.com), which I haven't set yet. If you want
+me to do this in this session, say so; otherwise I'll defer to v0.2.
+
+## Local files
+
+```
+/root/projects/soswitch/
+├── CNAME                 sovswitch.com
+├── LICENSE.md            EvoBiosys License (AMPL 1.0 base)
+├── README.md
+├── _config.yml           Jekyll passthrough
+├── about.html
+├── advanced.html
+├── assets/style.css      EU palette + Atkinson Hyperlegible
+├── index.html            hero, three-threat frame, three-paths CTA
+├── methodology.html      clearly malicious vs backdoor
+├── projects.html         OpenHarness, OpenMac, OpenWindows, …
+├── threats.html
+├── HANDOFF.md            (this file)
+└── .github/workflows/jekyll-gh-pages.yml   (your existing workflow, untouched)
+```
+
+Local preview: `cd /root/projects/soswitch && python3 -m http.server 8000`

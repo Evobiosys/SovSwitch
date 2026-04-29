@@ -4,7 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Projects — Sovereign Switch</title>
-  <meta name="description" content="Sovereign Switch projects: OpenHarness, secureOpenHarness, OpenMac, OpenWindows, deGoogle flows, and partners like Incogni.">
+  <meta name="description" content="Sovereign Switch projects in three rings: integrated (we share the code), related (aligned aims, distinct stewardship), and aligned offers we recommend.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="canonical" href="https://sovswitch.com/projects.html">
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
@@ -28,19 +29,39 @@
     <div class="shell">
       <h1>Projects</h1>
       <p class="lede">
-        Each project is a piece of the bridge between technical sovereignty (which works)
-        and the daily-driver experience your friends, partner, and parents will actually use.
+        Three concentric rings: <strong>integrated</strong> projects we steward and whose
+        code we publish; <strong>related</strong> projects we work alongside; and
+        <strong>aligned</strong> offers from separate organisations we recommend.
       </p>
 
-      <h2 id="openharness">OpenHarness <span class="pill pill-build">In build &middot; stealth</span></h2>
+      <h2 class="section-eyebrow">Integrated projects</h2>
+      <p>The pieces we run, fund, and (eventually) ship the source for. SoTranscribe
+        is the first to publish its code publicly &mdash; a marker for the path the
+        others will follow.</p>
+
+      <h3 id="sotranscribe">SoTranscribe &rarr; SovTranscribe <span class="pill pill-build">First to ship code</span></h3>
+      <p>
+        Sovereign transcription &mdash; turn voice into text without sending the audio
+        to a U.S. cloud. Currently lives on the QuestHub server; being moved to
+        <code>/transcribe</code> on this site. Will accept all of <code>sotranscribe.com</code>,
+        <code>sovtranscribe.com</code>, and <code>transcribe</code>-style requests once landed.
+      </p>
+      <p>
+        <strong>Significance:</strong> the first project where we publish our personal
+        codebase publicly. Status: in transfer; once GitHub is the canonical source
+        and the QuestHub server is no longer the primary host, the QuestHub presence
+        downgrades to a passive quest entry (least priority).
+      </p>
+
+      <h3 id="openharness">OpenHarness <span class="pill pill-build">In build &middot; stealth</span></h3>
       <p>
         A sovereign terminal AI &mdash; an open fork of <a href="https://opencode.ai">OpenCode.ai</a>
         (120k+ stars, 75+ supported models including Claude, GPT, Gemini, Mistral, and local Ollama).
       </p>
       <p>
-        Designed to remove the things in proprietary AI harnesses that quietly hurt: prompts that
-        evaporate when you hit Ctrl-C, stress-inducing permission dialogs that punish you for
-        exploring, opaque memory you can't read or edit, vendor lock-in to a single model.
+        Designed to remove the things in proprietary AI harnesses that quietly hurt:
+        prompts that evaporate when you hit Ctrl-C, stress-inducing permission dialogs,
+        opaque memory you can't read or edit, vendor lock-in to a single model.
       </p>
       <ul>
         <li><strong>Prompt autosave</strong> &mdash; every keystroke survives Ctrl-C, accidental close, or crash.</li>
@@ -48,45 +69,29 @@
         <li><strong>Region-aware model defaults</strong> &mdash; Mistral in EU, Claude in US, Qwen in CN, Ollama anywhere.</li>
         <li><strong>Custom memory system</strong> &mdash; readable JSONL plus markdown mirrors, not a black box.</li>
       </ul>
-      <p class="small">Status: stealth. Paired with secureOpenHarness for sandboxed execution.</p>
 
-      <h2 id="secureopenharness">secureOpenHarness <span class="pill pill-concept">Concept</span></h2>
+      <h3 id="secureopenharness">secureOpenHarness <span class="pill pill-concept">Concept</span></h3>
       <p>
-        The security and isolation layer beneath OpenHarness (and any other AI assistant you let
-        run on your machine). Sandboxed execution via Podman / Bubblewrap, filesystem isolation,
-        a token vault with scoped access, and audit logging.
+        The security and isolation layer beneath OpenHarness (and any other AI
+        assistant you let run on your machine). Sandboxed execution via Podman /
+        Bubblewrap, filesystem isolation, a token vault with scoped access, and audit logging.
       </p>
       <p>
-        Inspired by Vitalik's self-sovereign LLM setup &mdash; the goal is that your AI assistant
-        cannot reach your password manager, your SSH keys, or files outside its sandbox, even if
-        the model itself is compromised or jailbroken.
+        Inspired by <a href="https://vitalik.eth.limo/">Vitalik's self-sovereign LLM setup</a>
+        &mdash; the goal is that your AI assistant cannot reach your password manager,
+        your SSH keys, or files outside its sandbox, even if the model itself is
+        compromised or jailbroken.
       </p>
 
-      <h2 id="desktop">OpenMac <span class="pill pill-concept">Reference: AiryxOS</span></h2>
+      <h3 id="degoogle">deGoogle flows <span class="pill pill-build">Migration paths</span></h3>
       <p>
-        A familiar Mac UI on Linux. Legally safe &mdash; the look-and-feel of an OS isn't
-        copyrighted (Apple v. Microsoft 1994). Built on the early-stage <a href="https://airyx.org">AiryxOS</a>
-        effort. The point is not to ship a "fake macOS" &mdash; it's to give the millions of Mac
-        users a path that doesn't ask them to relearn how to right-click.
-      </p>
-
-      <h2>OpenWindows <span class="pill pill-concept">Reference: ReactOS</span></h2>
-      <p>
-        A familiar Windows UI on Linux. <a href="https://reactos.org">ReactOS</a> has been in
-        active development for 30 years and runs many Windows apps natively, complementary to
-        Wine, CrossOver, and Proton for app compatibility. Same logic as OpenMac &mdash; reduce
-        the cognitive cost of switching to near zero.
-      </p>
-
-      <h2 id="degoogle">deGoogle flows <span class="pill pill-build">Migration paths</span></h2>
-      <p>
-        Step-by-step paths for the big four Google services. Each path is calibrated for a
-        non-techie, honest about tradeoffs, and ends with a working setup &mdash; not a checklist.
+        Step-by-step paths for the big four Google services. Each path is calibrated
+        for a non-techie, honest about tradeoffs, and ends with a working setup &mdash;
+        not a checklist.
       </p>
       <ul>
         <li><strong>Gmail &rarr; Proton / Tuta / Infomaniak.</strong> The keystone migration.
-          Email is your account-recovery hub for everything else; doing this first makes every
-          subsequent switch easier.</li>
+          Email is your account-recovery hub for everything else.</li>
         <li><strong>Calendar &rarr; CalDAV (Infomaniak, Posteo, Proton Calendar).</strong>
           Native sync to iOS, Android, macOS, Windows, Linux without Google's middleman.</li>
         <li><strong>Drive &rarr; Tresorit / Proton Drive / Nextcloud (self or hosted).</strong>
@@ -94,40 +99,83 @@
         <li><strong>Photos &rarr; Ente / Immich.</strong> Both end-to-end encrypted; Immich is
           self-hosted, Ente is hosted-but-zero-knowledge.</li>
       </ul>
-      <p class="small">Detailed how-to pages for each path are coming. Subscribe via the
-        <a href="/#start">homepage CTA</a> if you want to be told when one ships.</p>
 
-      <h2 id="phone">Phone (the lane that matters most for most people)</h2>
+      <h2 class="section-eyebrow">Related projects</h2>
+      <p>Distinct stewardship, aligned aims. We collaborate, share know-how, sometimes
+        contribute upstream &mdash; but the codebase isn't ours.</p>
+
+      <h3 id="interharness">InterHarness <span class="pill pill-build">In build</span></h3>
+      <p>
+        A session-management layer for Claude Code: persistent banner, autosave-reinject,
+        zoom in/out across nested sessions, ★-glyph for important items, ih r &harr; ih c
+        semantics, cron-scheduling helpers. Adjacent to OpenHarness; serves the day-to-day
+        operator experience while OpenHarness owns the underlying stack.
+      </p>
+
+      <h3 id="phone">Phone &mdash; the lane that matters most</h3>
       <p>
         Your phone leaks more about you than any other device, by orders of magnitude.
         Two pragmatic options, depending on hardware:
       </p>
       <ul>
-        <li><strong>Pixel + GrapheneOS.</strong> The strongest privacy-respecting Android option.
-          Keeps Play Store apps via a sandboxed Google Services layer. Tradeoff: Pixel hardware required;
-          some banking apps misbehave (a small and shrinking list).</li>
-        <li><strong>Most Androids + /e/OS.</strong> A de-Googled Android that runs on more devices.
-          Less locked-down than GrapheneOS but a lower bar to entry.</li>
+        <li><strong>Pixel + GrapheneOS</strong> &mdash; the strongest privacy-respecting
+          Android. Keeps Play Store apps via a sandboxed Google Services layer.
+          <strong>2026 development:</strong> GrapheneOS has signalled an
+          <em>upcoming expansion beyond Pixel hardware</em> &mdash; previously the bottleneck
+          was Pixel's verified-boot guarantees; the team is opening a path to other
+          hardware that meets the same security baseline. Watch this space.</li>
+        <li><strong>Most Androids + /e/OS.</strong> A de-Googled Android that runs on more
+          devices today. Less locked-down than GrapheneOS but a lower bar to entry.</li>
         <li><strong>iOS, hardened.</strong> If you're not switching: turn off "Personalized Ads",
           set Mail Privacy Protection on, switch search default to Brave or DuckDuckGo, switch
           Safari to "Strict" tracking prevention. Doesn't fix the threat, materially reduces it.</li>
       </ul>
 
-      <h2>Partners</h2>
-      <h3 id="incogni">Incogni <span class="pill pill-partner">Partner</span></h3>
+      <h3 id="desktop">Desktop &mdash; OpenMac &middot; OpenWindows</h3>
       <p>
-        Incogni is a data-broker opt-out service. It contacts the (hundreds of) data brokers
-        that buy and resell your information, and tells them &mdash; on your behalf, with legal
-        authority &mdash; to delete your records and not re-collect.
+        Familiar UI on Linux, so the switching cost stays low. The look-and-feel of an
+        OS isn't copyrighted (Apple v. Microsoft 1994), so these are legally safe.
+      </p>
+      <ul>
+        <li><strong>OpenMac</strong> tracks the early-stage <a href="https://airyx.org">AiryxOS</a>
+          effort, plus emerging projects like <strong>Aisha</strong> and other macOS-alternative
+          distributions. Reviews-and-comparison page coming.</li>
+        <li><strong>OpenWindows</strong> tracks <a href="https://reactos.org">ReactOS</a>
+          (30+ years of active development) plus app-compat layers (Wine, CrossOver, Proton).</li>
+      </ul>
+
+      <h3 id="risc-v">Hardware horizon &mdash; RISC-V</h3>
+      <p>
+        Beyond x86, the open-instruction-set <strong>RISC-V</strong> ecosystem is the long-term
+        path off Intel ME / AMD PSP firmware. Today: RISC-V workstations exist (Talos, SiFive
+        development boards, Pine64) but performance and software compatibility lag x86.
+        Tomorrow: viable daily-driver hardware. We track the
+        <a href="https://riscv.org">RISC-V Foundation</a> roadmap and surface working setups
+        as they appear &mdash; for the
+        <a href="/methodology.html#data-tiers">semi-sensitive data tier</a>, RISC-V is
+        the hardware target.
+      </p>
+
+      <h2 class="section-eyebrow">Aligned offers</h2>
+      <p>Separate organisations whose offer fits the same person we're writing for.
+        We don't take a cut; we recommend because the alignment is real.</p>
+
+      <h3 id="incogni">Incogni <span class="pill pill-partner">Aligned offer</span></h3>
+      <p>
+        Incogni is a data-broker opt-out service. It contacts the (hundreds of) data
+        brokers that buy and resell your information, and tells them &mdash; on your
+        behalf, with legal authority &mdash; to delete your records and not re-collect.
       </p>
       <p>
-        Complementary to switching providers, not a replacement. You still need to leave Big Tech;
-        Incogni cleans up the trail Big Tech already sold.
+        Complementary to switching providers, not a replacement. You still need to leave
+        Big Tech; Incogni cleans up the trail Big Tech already sold.
       </p>
 
       <p style="margin-top: 3rem;">
         Want to know how we decide which projects make the list? See
-        <a href="/methodology.html">how we grade providers &rarr;</a>
+        <a href="/methodology.html">how we grade providers &rarr;</a> &mdash;
+        and the <a href="/methodology.html#multiple-accounts">multiple-accounts pattern</a>
+        for staging your switch without burning daily-driver time.
       </p>
     </div>
   </main>

@@ -316,3 +316,73 @@ footer a:hover { color: var(--eu-blue); text-decoration: underline; }
   padding: 0; margin: -1px; overflow: hidden;
   clip: rect(0,0,0,0); border: 0;
 }
+
+/* section eyebrow — category labels in projects grid */
+.section-eyebrow {
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--eu-blue);
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* globe section */
+.globe-wrap {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+.globe {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  display: block;
+}
+.globe-rotating {
+  transform-origin: 0 0;
+  animation: globe-spin 90s linear infinite;
+}
+@keyframes globe-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.globe-list h3 { margin-top: 0; }
+
+@media (max-width: 720px) {
+  .globe-wrap { grid-template-columns: 1fr; }
+  .globe { max-width: 240px; margin: 0 auto; }
+}
+
+/* version history */
+.changelog {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  border-top: 1px solid var(--grey-light);
+}
+.changelog li {
+  padding: 0.7rem 0;
+  border-bottom: 1px solid var(--grey-light);
+}
+
+/* data tiers table — methodology */
+.tier-table th, .tier-table td { vertical-align: top; }
+.tier-table tr td:first-child { font-weight: 700; color: var(--eu-blue); white-space: nowrap; }
+.tier-table .counterparty-cell {
+  background: var(--eu-yellow-soft);
+  color: var(--ink);
+  font-weight: 600;
+  border-left: 3px solid var(--eu-yellow);
+}
+.tier-table caption {
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--grey);
+  padding: 0.5rem 0;
+  caption-side: bottom;
+  font-style: italic;
+}

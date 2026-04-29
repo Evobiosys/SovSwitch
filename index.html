@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sovereign Switch — privacy without giving up your laptop</title>
   <meta name="description" content="The pragmatic path off Big Tech. Move your data, accounts, and apps to open-source, end-to-end-encrypted, EU-jurisdiction providers — without becoming a Linux engineer.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="canonical" href="https://sovswitch.com/">
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
@@ -116,12 +117,20 @@
   <section>
     <div class="shell">
       <h2>The projects we're building</h2>
-      <p>Each one is a piece of the bridge between Vitalik's setup and your laptop.</p>
+      <p>The bridge from <a href="https://vitalik.eth.limo/">Vitalik's self-sovereign LLM setup</a> to your laptop. Three rings, by closeness to our work:</p>
+
+      <h3 class="section-eyebrow">Integrated &mdash; we share the personal code</h3>
+      <p class="small">These are stewarded inside Sovereign Switch. SoTranscribe is the first to publish its source.</p>
       <div class="project-grid">
+        <div class="card">
+          <div class="card-meta"><span class="pill pill-build">First to ship code &middot; in transfer</span></div>
+          <h3>SoTranscribe &rarr; SovTranscribe</h3>
+          <p>Sovereign transcription &mdash; turn audio into text without sending it to a U.S. cloud. <strong>The first project where we publish our personal code.</strong> Currently on the QuestHub server; being moved to <code>/transcribe</code> here.</p>
+        </div>
         <div class="card">
           <div class="card-meta"><span class="pill pill-build">In build &middot; stealth</span></div>
           <h3>OpenHarness</h3>
-          <p>A sovereign terminal AI. Fork of OpenCode.ai. Autosaves your prompts, removes the stress-inducing permission UX, keeps you in control.</p>
+          <p>A sovereign terminal AI. Fork of OpenCode.ai. Autosaves prompts, removes stress-inducing permission UX, keeps you in control.</p>
         </div>
         <div class="card">
           <div class="card-meta"><span class="pill pill-concept">Concept</span></div>
@@ -129,27 +138,84 @@
           <p>Sandboxed AI execution (Podman / Bubblewrap). Your AI assistant can't reach your tokens or password manager.</p>
         </div>
         <div class="card">
-          <div class="card-meta"><span class="pill pill-concept">Reference: AiryxOS</span></div>
+          <div class="card-meta"><span class="pill pill-build">Migration paths</span></div>
+          <h3>deGoogle flows</h3>
+          <p>Step-by-step paths for Gmail, Calendar, Drive, Photos. Calibrated for non-techies, honest about tradeoffs.</p>
+        </div>
+      </div>
+
+      <h3 class="section-eyebrow">Related &mdash; we work alongside</h3>
+      <p class="small">Distinct stewardship, aligned aims. We share know-how, not the codebase.</p>
+      <div class="project-grid">
+        <div class="card">
+          <div class="card-meta"><span class="pill pill-build">In build</span></div>
+          <h3>InterHarness</h3>
+          <p>A session-management layer for Claude Code &mdash; banner, autosave reinject, zoom in/out across sessions, ★-glyph for important. Adjacent to OpenHarness.</p>
+        </div>
+        <div class="card">
+          <div class="card-meta"><span class="pill pill-concept">Reference: AiryxOS &middot; Aisha</span></div>
           <h3>OpenMac</h3>
-          <p>Familiar Mac UI on Linux. Legally safe (Apple v. Microsoft 1994). Built on the AiryxOS effort.</p>
+          <p>Familiar Mac UI on Linux. Legally safe (Apple v. Microsoft 1994). We track AiryxOS, Aisha, and other macOS-alternative efforts &mdash; reviews coming.</p>
         </div>
         <div class="card">
           <div class="card-meta"><span class="pill pill-concept">Reference: ReactOS</span></div>
           <h3>OpenWindows</h3>
           <p>Familiar Windows UI on Linux. ReactOS has 30 years of development behind it. Apps via Wine / Proton.</p>
         </div>
+      </div>
+
+      <h3 class="section-eyebrow">Aligned &mdash; we recommend</h3>
+      <p class="small">Separate organisations whose offer fits the same person we're writing for.</p>
+      <div class="project-grid">
         <div class="card">
-          <div class="card-meta"><span class="pill pill-build">Migration paths</span></div>
-          <h3>deGoogle flows</h3>
-          <p>Step-by-step paths for Gmail, Calendar, Drive, Photos. Calibrated for non-techies, honest about tradeoffs.</p>
-        </div>
-        <div class="card">
-          <div class="card-meta"><span class="pill pill-partner">Partner</span></div>
+          <div class="card-meta"><span class="pill pill-partner">Aligned offer</span></div>
           <h3>Incogni</h3>
           <p>Data-broker opt-out service. Removes you from the lists Big Tech buys from. Complementary, not a replacement.</p>
         </div>
       </div>
-      <p><a href="/projects.html">See all projects in detail &rarr;</a></p>
+
+      <p style="margin-top: 1.5rem;"><a href="/projects.html">See each project in detail &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="shell">
+      <h2>Local groups</h2>
+      <p>
+        Sovereignty is easier with neighbours. These are communities you can show up to in person &mdash;
+        mesh networks, hacker spaces, digital-rights collectives. Tell us about yours and we'll add it.
+      </p>
+      <div class="globe-wrap">
+        <svg class="globe" viewBox="-50 -50 100 100" aria-hidden="true">
+          <defs>
+            <radialGradient id="sphere" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#1a4ec0"/>
+              <stop offset="60%" stop-color="#003399"/>
+              <stop offset="100%" stop-color="#001f5c"/>
+            </radialGradient>
+          </defs>
+          <circle cx="0" cy="0" r="44" fill="url(#sphere)" stroke="#FFCC00" stroke-width="0.4" stroke-opacity="0.3"/>
+          <g class="globe-rotating" fill="none" stroke="#FFCC00" stroke-width="0.35" stroke-opacity="0.35">
+            <ellipse cx="0" cy="0" rx="44" ry="14"/>
+            <ellipse cx="0" cy="0" rx="44" ry="28"/>
+            <ellipse cx="0" cy="0" rx="44" ry="42"/>
+            <ellipse cx="0" cy="0" rx="14" ry="44"/>
+            <ellipse cx="0" cy="0" rx="28" ry="44"/>
+            <ellipse cx="0" cy="0" rx="42" ry="44"/>
+            <line x1="-44" y1="0" x2="44" y2="0"/>
+            <line x1="0" y1="-44" x2="0" y2="44"/>
+          </g>
+          <g class="globe-rotating">
+            <circle cx="6" cy="-12" r="1.8" fill="#FFCC00"/>
+            <circle cx="6" cy="-12" r="3.2" fill="#FFCC00" fill-opacity="0.25"/>
+          </g>
+        </svg>
+        <div class="globe-list">
+          <h3>Vienna &middot; Funkfeuer Wien</h3>
+          <p>Mesh-network community in Vienna. Long-running, hands-on, aligned values. <a href="https://funkfeuer.at">funkfeuer.at</a></p>
+          <p class="small"><strong>Your group here?</strong> <a href="mailto:connect@sovswitch.com?subject=Local%20group">Tell us</a> &mdash; we want this list to be real before it's long.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -169,8 +235,9 @@
       <h2>What this is not</h2>
       <p>
         Sovereign Switch is <strong>not</strong> a hardcore security or privacy site.
-        We optimize for the curious non-techie who wants out of the dragnet this weekend &mdash;
-        not for the journalist who already runs Qubes.
+        We optimize for the curious non-techie who wants out of the
+        <a href="/threats.html#structural-surveillance">dragnet</a> this weekend &mdash;
+        not for the journalist who already runs <a href="https://www.qubes-os.org/">Qubes</a>.
       </p>
       <p>
         If you're protecting against state-level adversaries, supply-chain compromise, or hardware
@@ -184,6 +251,16 @@
         <strong>"backdoor"</strong> (provider has structural opacity).
         v1 optimizes against the first.
       </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="shell">
+      <h2 class="section-eyebrow">Version history</h2>
+      <ul class="changelog">
+        <li><strong>v1.0</strong> &mdash; 2026-04-29 &middot; first public version: hero, threats, three-paths CTA, projects (integrated / related / aligned), methodology, local groups (Vienna), advanced. Email at <a href="mailto:connect@sovswitch.com">connect@sovswitch.com</a>.</li>
+        <li class="small">Mid-term: move site to a dedicated repo and self-host on a sovereign server.</li>
+      </ul>
     </div>
   </section>
 

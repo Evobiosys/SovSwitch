@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Methodology — Sovereign Switch</title>
   <meta name="description" content="How Sovereign Switch grades providers. Clearly malicious vs backdoor. Jurisdiction first, performance trade-offs honest, daily-driver compatible.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <link rel="canonical" href="https://sovswitch.com/methodology.html">
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
@@ -103,6 +104,117 @@
           a mail server is a hobby, not a privacy strategy for non-techies. Pay 4&euro;/month
           to a Swiss provider whose business model is your subscription, not your data.</li>
       </ul>
+
+      <h2 id="data-tiers">Data tiers &mdash; what to put where</h2>
+      <p>
+        Not all your data deserves the same effort. A photo from yesterday's coffee
+        and your private signing key are not the same thing. The honest framing is to
+        tier your data by how much it would hurt if it leaked, then match each tier
+        to hardware and software you trust enough &mdash; no more, no less.
+      </p>
+      <table class="tier-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>What goes here</th>
+            <th>Hardware &amp; software</th>
+            <th class="counterparty-cell">Counterparty risk &mdash; bridges all tiers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Public</td>
+            <td>Anything you'd be fine seeing on a billboard. Blog posts, public profiles,
+              shipped code.</td>
+            <td>Any device. Any cloud. Any audience.</td>
+            <td class="counterparty-cell" rowspan="5">
+              <strong>Whoever you share data with becomes the new floor of your security.</strong>
+              Encryption protects your data <em>until</em> the moment a person, a service,
+              or a piece of software with legitimate access opens it. Choose counterparties
+              by what they could do with your data on their worst day, not their best.
+              <br><br>
+              This applies <em>across every tier</em> &mdash; the chip backdoor, the cloud
+              vendor, the journaling app, the friend with admin access, the AI you let
+              read your email. Every tier below is also a counterparty-trust decision.
+            </td>
+          </tr>
+          <tr>
+            <td>Personal</td>
+            <td>Daily-driver content: notes, photos, calendar, most chats. Loss is annoying,
+              not catastrophic.</td>
+            <td>Regular EU-jurisdiction stack (Proton / Tuta / Infomaniak). Standard laptop.
+              Encryption at rest + 2FA on accounts.</td>
+          </tr>
+          <tr>
+            <td>Private</td>
+            <td>Things you wouldn't want a former roommate to see. Drafts, financial details,
+              health logs, certain conversations.</td>
+            <td><strong>Best available chips</strong> (regular x86 / Apple Silicon / fast Pixel
+              etc.), and you do <em>everything possible</em> at the OS and software level
+              &mdash; full-disk encryption, sandboxing, end-to-end encrypted services,
+              hardware-key 2FA. The accepted trade-off: chip-backdoor risk
+              (Intel ME / AMD PSP / Secure Enclave opacity) stays in scope &mdash;
+              you're betting performance and compatibility against firmware trust.</td>
+          </tr>
+          <tr>
+            <td>Semi-sensitive</td>
+            <td>Things that would change your life if they leaked. Long-form journals,
+              partner-only material, source code under embargo.</td>
+            <td><strong>Still digital</strong>, but you accept slower / subpar tech in
+              exchange for auditable firmware. <strong>RISC-V workstations</strong>
+              (or libreboot/coreboot x86) &mdash; today's RISC-V is fine for text, code,
+              and email; not yet a fit for video editing or heavy GPU work. End-to-end
+              encryption mandatory.</td>
+          </tr>
+          <tr>
+            <td>Sensitive</td>
+            <td>What would put someone at risk if disclosed. Identity documents under
+              threat-model conditions, signing keys for high-value identities,
+              testimony, source attribution.</td>
+            <td><strong>No digital, full stop.</strong> Paper, ink, a safe, and
+              in-person handover. The only tier where the answer is "don't put
+              this on a computer at all." Most readers should never reach this tier;
+              if you do, see <a href="/advanced.html">Advanced</a> for the
+              targeted-individual resources we link out to.</td>
+          </tr>
+        </tbody>
+        <caption>
+          The tiers are sticky: data that <em>could</em> be sensitive often starts as
+          personal. Reclassify before you share, not after.
+        </caption>
+      </table>
+
+      <h2 id="multiple-accounts">The multiple-accounts pattern <span class="pill pill-concept">Coming soon: dynamic table</span></h2>
+      <p>
+        Sovereignty doesn't have to be all-or-nothing. The most pragmatic move for most
+        readers is running <strong>multiple accounts on the same machine</strong>, each with
+        a different trust posture &mdash; so you can experiment without compromising the
+        rest of your life.
+      </p>
+      <ol>
+        <li>
+          <strong>"Play" account.</strong> Essentially continue using your laptop the way
+          you've done so far. Use it to explore products and the apps you don't yet
+          trust with your data &mdash; Zoom, vendor onboarding flows, anything where the
+          risk of <em>not</em> using it is bigger than the risk of using it.
+        </li>
+        <li>
+          <strong>"Comfortable" account.</strong> Run only what you actually understand
+          and have set up yourself. The middle path &mdash; not paranoid, not casual.
+          Where most of your daily life happens once you're past the first migration.
+        </li>
+        <li>
+          <strong>"Private" account.</strong> Open-source code only, sandboxed where
+          possible. The destination once you're content with the trade-offs &mdash; this
+          is where the
+          <a href="#data-tiers">Private and Semi-sensitive</a> tiers live.
+        </li>
+      </ol>
+      <p class="small">
+        A dynamic comparison table for these three accounts &mdash; what to install, what
+        to log into, where to back up, what hardware fits each &mdash; <strong>is coming
+        soon</strong>. For now, treat the three above as a sketch.
+      </p>
 
       <h2>What we don't recommend (and why)</h2>
       <ul>
