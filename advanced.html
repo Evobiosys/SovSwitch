@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advanced — Sovereign Switch</title>
+  <meta name="description" content="If you're past the basics: hardcore privacy and security resources for journalists, dissidents, and threat-modeled individuals.">
+  <link rel="canonical" href="https://sovswitch.com/advanced.html">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell-wide nav-inner">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span> Sovereign Switch</a>
+      <div class="nav-links">
+        <a href="/threats.html">Threats</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/about.html">About</a>
+        <a href="/advanced.html" class="active">Advanced</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="prose">
+    <div class="shell">
+      <h1>Advanced</h1>
+      <p class="lede">
+        For when you're past the basics. Targeted-individual threat models, hardware sovereignty,
+        supply-chain integrity, and the resources we link out to instead of trying to compete with.
+      </p>
+
+      <div class="callout">
+        <strong>Honest framing:</strong> if you're a journalist, dissident, defender, or otherwise
+        threat-modeled by a capable adversary, the v1 Sovereign Switch site is not enough.
+        These resources are. We point at them rather than rewriting them.
+      </div>
+
+      <h2>Resources we trust</h2>
+      <ul>
+        <li><strong>Vitalik Buterin's self-sovereign LLM setup</strong> (April 2026) &mdash; the
+          proof-of-feasibility piece that motivates this whole project. Comprehensive, technical,
+          aimed at engineers.</li>
+        <li><strong>Privacy Guides</strong> (<a href="https://privacyguides.org">privacyguides.org</a>)
+          &mdash; the canonical community-maintained privacy reference. Where we send people who
+          want depth.</li>
+        <li><strong>Sovereign Tech Fund</strong> (<a href="https://sovereigntechfund.de">sovereigntechfund.de</a>)
+          &mdash; the German federal fund supporting open digital infrastructure.</li>
+        <li><strong>NLnet / NGI Zero</strong> &mdash; EU funding for open internet projects.
+          Many of the providers we recommend are funded by these mechanisms.</li>
+        <li><strong>Funkfeuer Wien</strong> &mdash; mesh network and digital sovereignty community
+          in Vienna. Aligned values, hands-on experience.</li>
+      </ul>
+
+      <h2>Hardware sovereignty</h2>
+      <p>
+        Modern x86 CPUs have a "management engine" (Intel ME) or "platform security processor"
+        (AMD PSP) running beneath your operating system &mdash; a closed-source, signed firmware
+        layer with its own network stack and full memory access. You can't audit it, you can't
+        turn it off without consequences, and you can't fully trust it.
+      </p>
+      <p>
+        For most readers this is fine: your threat model doesn't include the kind of adversary
+        who can exploit Intel ME against you specifically. For some readers it isn't fine.
+        Paths from least to most invasive:
+      </p>
+      <ul>
+        <li><strong>Coreboot / Libreboot</strong> on supported ThinkPads (T440p, T480, X230 era).
+          Removes most of the proprietary firmware, neuters Intel ME where possible.</li>
+        <li><strong>System76 Open Firmware</strong> &mdash; ships with new hardware, less work
+          than retrofitting.</li>
+        <li><strong>Talos / RISC-V workstations</strong> &mdash; if you're willing to leave the
+          x86 ecosystem entirely. Performance and software compatibility tradeoffs.</li>
+      </ul>
+
+      <h2>Strong anonymity</h2>
+      <p>
+        The v1 site doesn't address anonymity &mdash; we focus on confidentiality and jurisdiction.
+        If anonymity is what you need:
+      </p>
+      <ul>
+        <li><strong>Tor Browser</strong> &mdash; the right starting point. Orient against the
+          common anti-patterns (don't log into your real-name accounts over Tor, etc.) before
+          relying on it.</li>
+        <li><strong>Tails OS</strong> &mdash; amnesic live OS, runs from USB, leaves no traces.
+          The right tool when the device itself can't be trusted.</li>
+        <li><strong>Mixnets</strong> (Nym, Mixmaster legacy) &mdash; stronger than Tor against
+          traffic analysis at the cost of latency. Niche but real.</li>
+      </ul>
+
+      <h2>Supply-chain integrity</h2>
+      <p>
+        Reproducible builds, Sigstore, SLSA, and the broader software supply-chain conversation.
+        Beyond v1's scope but increasingly load-bearing for everyone. The most accessible entry
+        point is reading <a href="https://reproducible-builds.org">reproducible-builds.org</a>.
+      </p>
+
+      <h2>Targeted-individual threat models</h2>
+      <p>
+        If you're protecting yourself from a state-level adversary, an organized adversary, or
+        a stalker with resources, you need professional help and you need it before you change
+        anything technical. We're not equipped to give that help. Resources that are:
+      </p>
+      <ul>
+        <li><strong>Access Now Helpline</strong> &mdash; rapid-response support for activists and
+          journalists.</li>
+        <li><strong>Electronic Frontier Foundation</strong> &mdash; legal and technical help for
+          U.S.-jurisdiction defenders.</li>
+        <li><strong>Reporters Without Borders / Reporters Sans Fronti&egrave;res</strong> &mdash;
+          journalist-specific operational security support.</li>
+      </ul>
+
+      <p style="margin-top: 3rem;">
+        Back to the basics? <a href="/">Home</a> &middot;
+        <a href="/methodology.html">Methodology</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell-wide footer-grid">
+      <div>
+        <h4>Sovereign Switch</h4>
+        <p>The pragmatic path off Big Tech. Open source, EU jurisdiction, built for daily drivers.</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/threats.html">Threats</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/methodology.html">Methodology</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:connect@sovswitch.com">connect@sovswitch.com</a></li>
+          <li><a href="/about.html">About this project</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology — Sovereign Switch</title>
+  <meta name="description" content="How Sovereign Switch grades providers. Clearly malicious vs backdoor. Jurisdiction first, performance trade-offs honest, daily-driver compatible.">
+  <link rel="canonical" href="https://sovswitch.com/methodology.html">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell-wide nav-inner">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span> Sovereign Switch</a>
+      <div class="nav-links">
+        <a href="/threats.html">Threats</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/methodology.html" class="active">Methodology</a>
+        <a href="/about.html">About</a>
+        <a href="/advanced.html">Advanced &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="prose">
+    <div class="shell">
+      <h1>Methodology</h1>
+      <p class="lede">
+        How we decide what to recommend, and what bar a provider has to clear to make the list.
+      </p>
+
+      <h2>The core distinction: clearly malicious vs backdoor</h2>
+      <p>
+        Most "privacy" guides collapse two very different problems into one. We separate them:
+      </p>
+      <table>
+        <thead>
+          <tr><th>Category</th><th>What it means</th><th>v1 stance</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Clearly malicious</strong></td>
+            <td>The provider's business model <em>is</em> your data. They sell behavioral profiles,
+              ad targeting access, or the right to train models on your private content.
+              The legal opt-outs they offer are theatre; the data harvesting continues structurally.</td>
+            <td><strong>Disqualified.</strong> v1 of Sovereign Switch optimizes against this.</td>
+          </tr>
+          <tr>
+            <td><strong>Backdoor</strong></td>
+            <td>The provider's business model isn't adversarial, but they have structural opacity
+              that could be exploited &mdash; closed source, jurisdiction with secret-court compulsion,
+              hardware trust roots you can't audit. The provider isn't selling you out; the
+              architecture might.</td>
+            <td><strong>Acknowledged, deferred.</strong> Mentioned where relevant; deep treatment
+              lives on <a href="/advanced.html">Advanced</a>.</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        This distinction matters because the right move differs. To escape "clearly malicious", you
+        change provider. To escape "backdoor", you change provider <em>and</em> jurisdiction
+        <em>and</em> often hardware &mdash; which is a much bigger ask, and the wrong first step for
+        the audience this site is for.
+      </p>
+
+      <h2>The provider grading rubric</h2>
+      <p>For a provider to make the list, it has to clear all of these:</p>
+      <ol>
+        <li><strong>Business model is not your data.</strong> They charge you for the service, or
+          they're funded by grants / membership / B-corp model that doesn't depend on monetizing
+          you. We trust subscriptions over "free."</li>
+        <li><strong>Jurisdiction is one we'd actually trust.</strong> Switzerland, Germany, France,
+          Iceland, Norway, the Netherlands, Estonia. Not the U.S. (CLOUD Act). Not jurisdictions
+          known for hostile compelled-disclosure regimes.</li>
+        <li><strong>Open source, or at minimum open clients.</strong> If a closed-source client
+          handles your plaintext, encryption claims are unverifiable.</li>
+        <li><strong>End-to-end encryption where the data type allows.</strong> Email-at-rest is
+          easy; full E2EE email is harder &mdash; we note when a provider does the harder thing.</li>
+        <li><strong>Daily-driver performance.</strong> If a recommendation tanks daily-driver
+          experience (slow sync, broken integrations, unusable on mobile), it doesn't make v1.
+          Friction is what kills migrations, not threats.</li>
+        <li><strong>Honest tradeoffs.</strong> The provider doesn't pretend it's also a chat app,
+          a VPN, a password manager, and a calendar &mdash; or if it does, we evaluate each
+          surface separately.</li>
+      </ol>
+
+      <h2>What we explicitly accept</h2>
+      <p>
+        Some tradeoffs we accept on purpose, because the alternative is asking too much of the audience:
+      </p>
+      <ul>
+        <li><strong>Small data-loss risk for ease.</strong> A working personal-use stack you actually
+          maintain beats a perfect enterprise-grade stack you abandon after three months.
+          For most files, "1 in 10,000 files lost" is acceptable; for crown-jewel files
+          (signing keys, identity documents, irreplaceable photos), much stricter.</li>
+        <li><strong>EU jurisdiction over fully sovereign hardware.</strong> Hardware management
+          engines (Intel ME, AMD PSP) are real concerns; recommending only libreboot/coreboot
+          machines would shrink the audience to near zero. We accept this tradeoff at v1.
+          See <a href="/advanced.html">Advanced</a> for the full hardware story.</li>
+        <li><strong>Subscription cost over self-hosting</strong> for most readers. Self-hosting
+          a mail server is a hobby, not a privacy strategy for non-techies. Pay 4&euro;/month
+          to a Swiss provider whose business model is your subscription, not your data.</li>
+      </ul>
+
+      <h2>What we don't recommend (and why)</h2>
+      <ul>
+        <li><strong>U.S.-jurisdiction "private" services.</strong> CLOUD Act exposure. Even
+          E2EE doesn't fully fix this for metadata. (We disqualify Stripe-based payment providers
+          at the infra layer for the same reason.)</li>
+        <li><strong>Free email re-routing services.</strong> If you're not paying, the math
+          rarely works in your favor.</li>
+        <li><strong>Brand-name VPNs that advertise on YouTube.</strong> Mostly performative.
+          Different threat model than the ones we address. If you need a VPN, you probably know
+          why &mdash; <a href="/advanced.html">Advanced</a> covers Tor and mixnets.</li>
+      </ul>
+
+      <p style="margin-top: 3rem;">
+        Now read what we've decided to build with this rubric &rarr;
+        <a href="/projects.html">Projects</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell-wide footer-grid">
+      <div>
+        <h4>Sovereign Switch</h4>
+        <p>The pragmatic path off Big Tech. Open source, EU jurisdiction, built for daily drivers.</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/threats.html">Threats</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/advanced.html">Advanced &rarr;</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:connect@sovswitch.com">connect@sovswitch.com</a></li>
+          <li><a href="/about.html">About this project</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

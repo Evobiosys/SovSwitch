@@ -1,0 +1,21 @@
+title: Sovereign Switch
+description: The pragmatic path off Big Tech. Open source, EU jurisdiction, built for daily drivers.
+url: https://sovswitch.com
+lang: en
+
+# Jekyll passthrough mode — site is static HTML, Jekyll just builds and deploys.
+# When we add Jekyll-rendered pages later, drop them in alongside the .html files.
+
+# Excluded from the build (per holon-init m-065 + standard Jekyll hygiene)
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - HANDOFF.md
+  - LICENSE.md
+  - .github
+
+# Plugin-free: avoids GitHub Actions surprises, keeps the build fast.
+plugins: []

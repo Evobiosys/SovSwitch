@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Threats — Sovereign Switch</title>
+  <meta name="description" content="The three threats Sovereign Switch addresses: data harvesting, structural surveillance, and hackers. What's in scope, what's out, and why.">
+  <link rel="canonical" href="https://sovswitch.com/threats.html">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell-wide nav-inner">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span> Sovereign Switch</a>
+      <div class="nav-links">
+        <a href="/threats.html" class="active">Threats</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/about.html">About</a>
+        <a href="/advanced.html">Advanced &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="prose">
+    <div class="shell">
+      <h1>Threats</h1>
+      <p class="lede">
+        Three threats. Plain language. No fearmongering. Each one paired with a concrete move.
+      </p>
+
+      <h2>1. Data harvesting</h2>
+      <p>
+        Big Tech's business model <em>is</em> your data. Gmail, Drive, Photos, Maps, Search,
+        the keyboard on your phone &mdash; the value flows from observing you, not from the
+        software itself. The software is the bait.
+      </p>
+      <p>
+        This is the threat most people are most exposed to and least worried about.
+        Not because it's small &mdash; it's huge &mdash; but because it doesn't feel like a threat.
+        It feels like convenience.
+      </p>
+      <div class="callout">
+        <strong>What it actually does:</strong> builds a behavioral profile of you, sells targeting
+        access to advertisers, trains models on your private content, and keeps the profile
+        even if you delete the account. Some providers also legally hand the profile to law
+        enforcement on request, sometimes without notifying you.
+      </div>
+      <p><strong>What we offer:</strong> migration paths to providers whose business model isn't
+        your data &mdash; Proton, Tuta, Infomaniak, Murena, EU-jurisdiction storage. See
+        <a href="/projects.html#degoogle">deGoogle flows</a>.</p>
+
+      <h2>2. Structural surveillance</h2>
+      <p>
+        Governments dragnet everyone. The U.S. CLOUD Act lets U.S. authorities compel U.S.
+        providers to hand over data <em>even when that data sits in Frankfurt</em>. The provider
+        often can't tell you it happened.
+      </p>
+      <p>
+        This is not about whether you personally are interesting to a state. It's about whether
+        the data flows you depend on are sitting in jurisdictions that respect your rights when
+        you're not in the room.
+      </p>
+      <p>
+        Switzerland, Germany, France, Iceland, and Norway are the jurisdictions we lean on.
+        Not perfect &mdash; nowhere is &mdash; but materially better than the U.S. for non-citizens.
+      </p>
+      <p><strong>What we offer:</strong> EU-jurisdiction-first stack, end-to-end encryption where
+        possible, open-source clients you can audit (or pay someone to audit), and a
+        <a href="/methodology.html">grading rubric</a> that takes jurisdiction seriously.</p>
+
+      <h2>3. Hackers and theft</h2>
+      <p>
+        Someone steals your laptop. Someone picks up your phone in a café. Someone breaks
+        into a service you use and your password ends up in a dump. This is the boring,
+        non-political threat &mdash; and it's the one most likely to actually happen to you.
+      </p>
+      <p><strong>What we offer:</strong> bundled defaults, not a 40-item checklist:</p>
+      <ul>
+        <li>Disk encryption on every device. It's a checkbox now &mdash; FileVault, BitLocker, LUKS.</li>
+        <li>2FA on email, banking, and one or two keystone accounts. Hardware keys if you can.</li>
+        <li>A password manager. Bitwarden or 1Password. Stop reusing passwords.</li>
+        <li>Backups for the few files you couldn't reconstruct &mdash; not for everything.</li>
+      </ul>
+
+      <h2>What we don't address</h2>
+      <p>The v1 site is honest about what's out of scope:</p>
+      <ul>
+        <li><strong>Targeted state-level attack.</strong> If a nation-state is after you specifically,
+          you need a different stack. See <a href="/advanced.html">Advanced</a>.</li>
+        <li><strong>Supply-chain compromise.</strong> Important, deep rabbit hole, scares people away.
+          We mention it on Methodology and link out.</li>
+        <li><strong>Hardware management engines</strong> (Intel ME, AMD PSP). Real concern,
+          deferred to <a href="/advanced.html">Advanced</a>.</li>
+        <li><strong>Tor / mixnets / strong anonymity.</strong> Different tool, different audience.</li>
+      </ul>
+
+      <p style="margin-top: 3rem;">
+        Done with threats? <a href="/projects.html">See what we're building &rarr;</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell-wide footer-grid">
+      <div>
+        <h4>Sovereign Switch</h4>
+        <p>The pragmatic path off Big Tech. Open source, EU jurisdiction, built for daily drivers.</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/methodology.html">Methodology</a></li>
+          <li><a href="/advanced.html">Advanced &rarr;</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:connect@sovswitch.com">connect@sovswitch.com</a></li>
+          <li><a href="/about.html">About this project</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
