@@ -386,3 +386,17 @@ footer a:hover { color: var(--eu-blue); text-decoration: underline; }
   caption-side: bottom;
   font-style: italic;
 }
+
+/* Globe — interactive (JS), with no-JS CSS-rotation fallback */
+.globe {
+  cursor: grab;
+  transform: rotate(-23.5deg);     /* Earth's axial tilt */
+  transition: transform 0.3s ease;
+  touch-action: none;              /* prevent page scroll while dragging on touch */
+  user-select: none;
+}
+.globe.grabbing { cursor: grabbing; }
+.globe-rotor { transform-origin: 0 0; transform-box: fill-box; }
+/* CSS fallback animation — JS removes the .css-spin class once it takes over */
+.globe-rotor.css-spin { animation: globe-spin 90s linear infinite; }
+.globe-rotor.js-driven { animation: none !important; }
