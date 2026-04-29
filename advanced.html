@@ -39,6 +39,116 @@
         These resources are. We point at them rather than rewriting them.
       </div>
 
+      <h2>Builders &amp; published work we follow</h2>
+      <p>
+        The people and projects whose published work shapes this site. Not exhaustive
+        &mdash; this is the working set we reference, not a directory.
+      </p>
+
+      <h3 class="section-eyebrow">Phones &amp; mobile hardware</h3>
+      <ul>
+        <li><a href="https://shop.nitrokey.com/shop/nitrophone"><strong>NitroPhone</strong></a>
+          (Nitrokey, Germany) &mdash; Pixel reflashed with GrapheneOS, optional mic/sensor
+          desolder. EU vendor wraps the strongest hardening stack today.</li>
+        <li><a href="https://www.shiftphones.com/"><strong>Shiftphone</strong></a>
+          (Germany) &mdash; ShiftOS-L (AOSP without GMS), 5-year patches, fair-trade hardware.
+          Slower silicon, ideologically aligned.</li>
+        <li><a href="https://www.fairphone.com/"><strong>Fairphone</strong></a> (Netherlands)
+          + <a href="https://murena.com/"><strong>Murena /e/OS</strong></a> &mdash;
+          turnkey de-Googled Android. Convenience-first; weaker low-level hardening than
+          GrapheneOS but a real lower bar to entry.</li>
+        <li><a href="https://volla.online/"><strong>Volla Phone</strong></a> (Germany) &mdash;
+          Volla OS or Ubuntu Touch. Niche, niche-aligned.</li>
+        <li><a href="https://www.pine64.org/pinephonepro/"><strong>PinePhone Pro</strong></a>
+          / <a href="https://puri.sm/products/librem-5/"><strong>Librem 5</strong></a>
+          &mdash; Linux phones with hardware kill switches (DIPs / sliders) that physically
+          cut modem, WiFi/BT, mic/cam. Daily-use is painful; verifiable from public schematics.</li>
+        <li><a href="https://grapheneos.org/"><strong>GrapheneOS</strong></a> &mdash; the
+          reference Android hardening project. Announced Motorola support (2027 ship)
+          ending the Pixel-only era.</li>
+      </ul>
+
+      <h3 class="section-eyebrow">Email, storage, communication</h3>
+      <ul>
+        <li><a href="https://mailbox.org/"><strong>Mailbox.org</strong></a> (Germany) &mdash;
+          paid email, calendar, drive. Strong jurisdiction, transparent ownership.</li>
+        <li><a href="https://posteo.de/"><strong>Posteo</strong></a> (Germany) &mdash; small,
+          cooperative, anonymous-payment-friendly. CalDAV/CardDAV, end-to-end at rest.</li>
+        <li><a href="https://stalw.art/"><strong>Stalwart Mail Server</strong></a> &mdash;
+          modern open-source mail server (JMAP-first). For self-hosters who want to
+          inhabit the email stack themselves.</li>
+        <li><a href="https://proton.me/"><strong>Proton</strong></a>
+          and <a href="https://tuta.com/"><strong>Tuta</strong></a> &mdash; Swiss / German
+          end-to-end encrypted mail and calendar. Mature, mainstream-usable.</li>
+        <li><a href="https://cryptpad.org/"><strong>CryptPad</strong></a> &mdash;
+          end-to-end encrypted real-time collaboration suite (docs, sheets, slides).
+          NLnet-funded; reference precedent for what aligned EU funding can build.</li>
+        <li><a href="https://immich.app/"><strong>Immich</strong></a> /
+          <a href="https://ente.io/"><strong>Ente</strong></a> &mdash; photos. Self-hosted
+          (Immich) or hosted-but-zero-knowledge (Ente).</li>
+      </ul>
+
+      <h3 class="section-eyebrow">Infrastructure &amp; hosting</h3>
+      <ul>
+        <li><a href="https://ungleich.ch/"><strong>ungleich</strong></a> (Switzerland) &mdash;
+          truly private hosting, datacenter-aligned values. Long-running cooperative
+          favoured for sensitive workloads.</li>
+        <li><a href="https://www.infomaniak.com/"><strong>Infomaniak</strong></a>
+          (Switzerland) &mdash; commercial Swiss provider, B-corp, EU jurisdiction;
+          our default registrar and mail host for v1.</li>
+        <li><a href="https://www.hetzner.com/"><strong>Hetzner</strong></a> (Germany) &mdash;
+          dedicated and cloud, mature ecosystem, sane pricing.</li>
+      </ul>
+
+      <h3 class="section-eyebrow">Research, journalism, methodology</h3>
+      <ul>
+        <li><a href="https://privacyguides.org"><strong>Privacy Guides</strong></a> &mdash;
+          the canonical community-maintained privacy reference. Forum threads
+          (especially on devices like Onyx Boox) are often the freshest signal.</li>
+        <li><a href="https://www.eff.org/"><strong>Electronic Frontier Foundation</strong></a>
+          &mdash; the long-running U.S. digital-rights org. Their Surveillance
+          Self-Defense guides remain a high-quality starting point.</li>
+        <li><a href="https://foundation.mozilla.org/en/privacynotincluded/"><strong>Mozilla
+          Privacy Not Included</strong></a> &mdash; consumer-product privacy reviews,
+          regularly identifies devices that call home to non-obvious places.</li>
+        <li><a href="https://www.amnesty.org/en/tech/"><strong>Amnesty Tech</strong></a>
+          &mdash; the public methodology for Pegasus / NSO forensic detection comes
+          from here. Required reading if your threat model touches state-level
+          adversaries; useful framing even if it doesn't.</li>
+        <li><a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292028"><strong>Liu
+          et al. (PLOS One)</strong></a> &mdash; academic study comparing OEM telemetry
+          across stock Android variants; the empirical basis for treating Samsung OneUI
+          as substantially leakier than stock Pixel.</li>
+        <li><a href="https://linddun.org/"><strong>LINDDUN (KU Leuven)</strong></a>
+          &mdash; privacy-threat-modelling framework from Belgian research. Where
+          formal threat-model work for privacy software gets done.</li>
+        <li><a href="https://forbiddenstories.org/"><strong>Forbidden Stories</strong></a>
+          &mdash; the Pegasus Project investigation sat here. Worth knowing exists.</li>
+      </ul>
+
+      <h3 class="section-eyebrow">Tools we recommend along the path</h3>
+      <ul>
+        <li><strong>DNS-level filtering:</strong>
+          <a href="https://nextdns.io/">NextDNS</a> (paid, EU jurisdiction option) /
+          <a href="https://rethinkdns.com/">RethinkDNS</a> (open-source, on-device).</li>
+        <li><strong>App sourcing on Android:</strong> <a href="https://f-droid.org/">F-Droid</a>
+          (open-source app store) + <a href="https://auroraoss.com/">Aurora Store</a>
+          (anonymous Play Store proxy).</li>
+        <li><strong>Sandboxing on Android:</strong>
+          <a href="https://github.com/PeterCxy/Shelter">Shelter</a> (work-profile sandbox),
+          <a href="https://github.com/ukanth/afwall">AFWall+</a> (per-app firewall, root).</li>
+        <li><strong>Reading on E-Ink:</strong>
+          <a href="https://koreader.rocks/">KOReader</a> &mdash; the right reader app
+          when you've hardened an Onyx Boox or similar.</li>
+        <li><strong>Password discipline:</strong>
+          <a href="https://bitwarden.com/">Bitwarden</a> (open-source, EU-hosted instance
+          available) / <a href="https://1password.com/">1Password</a> (closed but mature
+          if you need teams).</li>
+        <li><strong>Sensitive meetings:</strong> any
+          <strong>Faraday pouch</strong> (Mission Darkness, SLNT) &mdash; physical RF
+          attenuation, defends even if device firmware is compromised.</li>
+      </ul>
+
       <h2>Resources we trust</h2>
       <ul>
         <li><a href="https://vitalik.eth.limo/"><strong>Vitalik Buterin's self-sovereign LLM setup</strong></a>
