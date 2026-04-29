@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="6" fill="#003399"/>
-  <rect x="8" y="9"  width="16" height="5" rx="1.5" fill="#FFCC00"/>
-  <rect x="8" y="18" width="16" height="5" rx="1.5" fill="#FFCC00"/>
+  <!-- = sign (left): two short bars -->
+  <rect x="6"  y="11" width="9" height="3" rx="1" fill="#FFCC00"/>
+  <rect x="6"  y="18" width="9" height="3" rx="1" fill="#FFCC00"/>
+  <!-- > arrowhead (right): triangle pointing right -->
+  <path d="M 16 8 L 26 16 L 16 24 Z" fill="#FFCC00"/>
 </svg>

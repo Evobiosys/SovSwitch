@@ -77,27 +77,12 @@ small, .small { font-size: 0.875rem; color: var(--grey); }
 }
 .brand-mark {
   display: inline-block;
-  width: 18px;
-  height: 18px;
-  background: var(--eu-blue);
-  border-radius: 3px;
-  position: relative;
-}
-.brand-mark::before {
-  content: "";
-  position: absolute;
-  top: 4px; left: 4px;
-  width: 10px; height: 4px;
-  background: var(--eu-yellow);
-  border-radius: 1px;
-}
-.brand-mark::after {
-  content: "";
-  position: absolute;
-  bottom: 4px; left: 4px;
-  width: 10px; height: 4px;
-  background: var(--eu-yellow);
-  border-radius: 1px;
+  width: 22px;
+  height: 22px;
+  background-image: url('/assets/favicon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .nav-links { display: flex; gap: 1rem; flex-wrap: wrap; }
 .nav-links a {
@@ -400,3 +385,29 @@ footer a:hover { color: var(--eu-blue); text-decoration: underline; }
 /* CSS fallback animation — JS removes the .css-spin class once it takes over */
 .globe-rotor.css-spin { animation: globe-spin 90s linear infinite; }
 .globe-rotor.js-driven { animation: none !important; }
+
+/* footer changelog block (version history integrated into footer) */
+.footer-changelog {
+  border-top: 1px solid var(--grey-light);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  font-size: 0.88rem;
+}
+.footer-changelog h4 {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey);
+  margin: 0 0 0.6rem;
+}
+.footer-changelog ul.changelog {
+  border-top: none;
+  margin: 0;
+}
+.footer-changelog ul.changelog li {
+  padding: 0.4rem 0;
+  border-bottom: none;
+  color: var(--ink-soft);
+}
+.footer-changelog ul.changelog li strong { color: var(--eu-blue); }
+.footer-changelog .roadmap { margin-top: 0.6rem; color: var(--grey); }
