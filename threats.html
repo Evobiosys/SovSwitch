@@ -19,6 +19,7 @@
         <a href="/threats.html" class="active">Threats</a>
         <a href="/projects.html">Projects</a>
         <a href="/methodology.html">Methodology</a>
+        <a href="/transcribe.html">Transcribe</a>
         <a href="/about.html">About</a>
         <a href="/advanced.html">Advanced &rarr;</a>
       </div>
@@ -85,6 +86,120 @@
         <li>A password manager. Bitwarden or 1Password. Stop reusing passwords.</li>
         <li>Backups for the few files you couldn't reconstruct &mdash; not for everything.</li>
       </ul>
+
+      <h2 id="adversaries">Who you're protecting against &mdash; the four-tier adversary model</h2>
+      <p>
+        The three threats above are <em>what</em>. This section is <em>who</em>. The same defensive
+        move that frustrates one tier of adversary is invisible to another &mdash; so it helps
+        to be honest about which tier you're actually buying protection from when you make a
+        change.
+      </p>
+      <p>
+        We use four tiers, ordered from <strong>hardest to defend against</strong> to <strong>easiest</strong>.
+        Most readers should be aiming squarely at tiers 3 and 4; tier 1 is a different conversation
+        and tier 2 is somewhere in between.
+      </p>
+      <table class="tier-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Who they are</th>
+            <th>What they want / can do</th>
+            <th class="counterparty-cell">What materially helps</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 &mdash; State actors</td>
+            <td>National intelligence services. NSA-tier signals collection, allied services
+              with reciprocal access, peers in adversarial states.</td>
+            <td>Bulk dragnet metadata, targeted plaintext interception, supply-chain implants,
+              compelled-disclosure orders against providers in their jurisdiction. They can
+              coerce many of the layers below them.</td>
+            <td class="counterparty-cell">Honestly &mdash; jurisdiction more than tooling. EU
+              jurisdiction, open hardware, open source, and a threat model that assumes the
+              cloud is hostile. If you are a deliberate target, you need
+              <a href="/advanced.html">Advanced</a> &mdash; not v1 of this site.</td>
+          </tr>
+          <tr>
+            <td>2 &mdash; Corporate espionage &amp; cloud providers with legitimate access</td>
+            <td>Competitors, contractors-of-competitors, U.S. ad-tech infrastructure, AI vendors
+              training on your private content, cloud providers whose ToS lets them read for
+              moderation / abuse / "service quality" purposes.</td>
+            <td>Read whatever sits in plaintext on a system they control or have a vendor
+              relationship with. Aggregate behavioural profiles. In some cases, sell access to
+              third parties under a different label.</td>
+            <td class="counterparty-cell">Provider choice. Move workloads to providers whose
+              business model is not your data; insist on E2EE where the data type allows;
+              minimize how much sits on infrastructure you don't trust. This is where the
+              <a href="/methodology.html">grading rubric</a> spends most of its energy.</td>
+          </tr>
+          <tr>
+            <td>3 &mdash; Law enforcement (lawful process)</td>
+            <td>Police, prosecutors, regulatory bodies operating through subpoena, court order,
+              MLAT requests across friendly jurisdictions.</td>
+            <td>Compel a provider in their jurisdiction to hand over what that provider can see.
+              Critically, this is <em>bounded by the judicial system above the request</em>. In
+              jurisdictions with multiple-judge oversight and adversarial process, this stays
+              narrow. In jurisdictions with venue-shopping or rubber-stamp courts, the bound
+              is much weaker.</td>
+            <td class="counterparty-cell">E2EE limits what the provider <em>can</em> hand over,
+              even under a valid order. Jurisdiction choice (EU over U.S.) shifts which legal
+              system gets to compel. We do not aim to make lawful process impossible &mdash;
+              see the note below on targeted-individual balance.</td>
+          </tr>
+          <tr>
+            <td>4 &mdash; Lazy opportunists</td>
+            <td>Phishing kits, credential-stuffing botnets, laptop thieves, the friend who
+              borrows your unlocked phone, casual snooping by service-side employees.</td>
+            <td>Whatever is easy. They don't have a model of you; they have automation against
+              the path of least resistance and weakly defended targets.</td>
+            <td class="counterparty-cell">The boring fundamentals: disk encryption, 2FA,
+              hardware keys, password manager, locked screens, encrypted backups. This is
+              tier 3 of the <a href="/#start">three threats above</a> &mdash; the threat most
+              likely to actually happen.</td>
+          </tr>
+        </tbody>
+        <caption>
+          Each tier requires a meaningfully different defence. A move that crushes tier 4 (a
+          password manager) does nothing against tier 1 (NSA-tier collection). A move against
+          tier 1 (libreboot RISC-V on a Swiss colo) is wildly disproportionate against tier 4.
+          The art is matching defences to the tier you actually face on a given file.
+        </caption>
+      </table>
+
+      <div class="callout">
+        <strong>Plaintext visibility &mdash; what privacy moves don't do.</strong>
+        Most "privacy" tools (proxies, VPNs, anonymization) protect against
+        <em>traffic-level</em> observers &mdash; tier 1 dragnet collection or tier 4 network
+        snoops. They do <strong>not</strong> hide your content from the <em>service you're
+        sending it to</em>. Without end-to-end encryption, the email provider, the cloud
+        transcriber, the document app all read your plaintext directly. This is why the
+        <a href="/methodology.html">methodology</a> insists on E2EE where the data type
+        allows it &mdash; jurisdiction and provider choice are the controls that bound
+        plaintext exposure once you're already a customer.
+      </div>
+
+      <h3 id="targeted-balance">A note on the targeted-individual balance</h3>
+      <p>
+        We are deliberately not building a stack that makes <em>all</em> lawful process impossible.
+        That position is unusual among hardcore privacy guides, and it's worth saying out loud.
+      </p>
+      <p>
+        Targeted-individual surveillance under a sound judicial system &mdash; multiple judges,
+        adversarial process, narrow scope, named subjects &mdash; is part of how a society stops
+        terror, organized crime, and abuse cases. We don't want to build infrastructure that
+        treats <em>that</em> as the same threat as bulk dragnet collection or
+        ad-tech behavioural profiling. The two require different defences and call for different
+        political stances.
+      </p>
+      <p>
+        What we are clear on: jurisdictions where venue-shopping, rubber-stamp courts, or
+        single-judge ex-parte orders are routine do <em>not</em> meet that bar, and we treat
+        them as closer to tier 1 (state actor) than tier 3 (lawful process). That distinction is
+        the live wire under most of our jurisdiction recommendations. See
+        <a href="/about.html#stance">About &middot; Personal stance</a> for the longer version.
+      </p>
 
       <h2>What we don't address</h2>
       <p>The v1 site is honest about what's out of scope:</p>

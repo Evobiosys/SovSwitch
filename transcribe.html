@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transcribe — Sovereign Switch</title>
+  <meta name="description" content="SoTranscribe: privacy-respecting transcription with five hosting tiers, two processing profiles, and an end-to-end encrypted file flow. The first paid offering of Sovereign Switch.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="canonical" href="https://sovswitch.com/transcribe.html">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell-wide nav-inner">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span> Sovereign Switch</a>
+      <div class="nav-links">
+        <a href="/threats.html">Threats</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/transcribe.html" class="active">Transcribe</a>
+        <a href="/about.html">About</a>
+        <a href="/advanced.html">Advanced &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="prose">
+    <div class="shell">
+      <h1>Transcribe</h1>
+      <p class="lede">
+        SoTranscribe is the first paid offering of Sovereign Switch &mdash; privacy-respecting
+        transcription, five hosting tiers, two processing profiles, end-to-end encryption
+        between your machine and whichever server you choose.
+      </p>
+
+      <div class="callout">
+        <strong>Status &mdash; first paid offering, in transfer.</strong>
+        SoTranscribe currently runs on the QuestHub server. We're moving the codebase into the open
+        and the service onto the <code>/transcribe</code> path on this domain. Pricing on this page
+        is being calibrated against our own real processing data; everything marked
+        <em>(calibrating)</em> will firm up before we charge anyone.
+      </div>
+
+      <h2>Why a paid offering exists on a sovereignty site</h2>
+      <p>
+        The information on this site stays free. SoTranscribe is the working tooling that
+        funds the rest of the project &mdash; a service whose business model is your subscription,
+        not your data. That is the same rubric we apply to every provider we recommend on
+        <a href="/methodology.html">Methodology</a>; we hold ourselves to it too.
+      </p>
+      <p>
+        Transcription is also the right first product, because it is one of the most common ways
+        non-techies leak sensitive content today: meeting recordings, voice notes, interviews,
+        therapy reflections, walking memos &mdash; routinely sent to U.S. cloud transcribers without
+        a second thought. The economic engine is therefore also the closest thing to a daily-driver
+        sovereignty practice for most readers.
+      </p>
+
+      <h2>How a file moves through the system</h2>
+      <p>
+        Every file follows the same envelope, no matter which hosting tier you pick. The hosting
+        tier only changes <em>where the decryption-and-processing step happens</em>.
+      </p>
+      <ol>
+        <li><strong>Encrypt locally.</strong> Your client encrypts the audio on your machine with a
+          key derived from your account passphrase. The plaintext audio never leaves your device.</li>
+        <li><strong>Ship encrypted.</strong> The ciphertext travels to whichever server tier you
+          selected. In transit it's protected twice &mdash; by your passphrase-derived key and by
+          standard transport encryption.</li>
+        <li><strong>Decrypt on the chosen tier.</strong> The server tier you picked decrypts the
+          file in memory, runs the model, produces the transcript. This is the only step where
+          plaintext exists on a machine that isn't yours &mdash; the entire point of the tier
+          choice is bounding <em>which</em> machine that is.</li>
+        <li><strong>Encrypt the result, ship it back.</strong> The transcript (text only &mdash;
+          much smaller than audio) is encrypted with your key and returned. Only your client
+          can read it.</li>
+        <li><strong>Server-side wipe.</strong> The decrypted audio and any transcript caches are
+          purged from the tier server within minutes. Encrypted artefacts are kept only as long
+          as your retention setting says.</li>
+      </ol>
+
+      <p class="small">
+        For the &ldquo;Sensitive&rdquo; tier on the
+        <a href="/methodology.html#data-tiers">data-tiers ladder</a>, the answer is still <em>don't
+        digitize this</em>. Transcription means a model decrypts your audio at some point;
+        no commercial offering &mdash; including ours &mdash; changes that. The question is only
+        <em>under whose roof</em>.
+      </p>
+
+      <h2 id="profiles">Two processing profiles</h2>
+      <p>
+        You pick a profile per file or as a global default. Switching defaults later is one click;
+        re-running a previously processed file under a stricter profile is also supported.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Profile</th>
+            <th>What it does</th>
+            <th>Trade-off</th>
+            <th>Diarizer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Thorough</strong></td>
+            <td>Highest-quality transcription model the chosen tier supports, full diarization
+              (who spoke when), inline timestamps, glossary fitting against your prior files,
+              optional summary.</td>
+            <td>Slowest. Often 2&ndash;3&times; real-time on the slower tiers. <em>(calibrating)</em></td>
+            <td>On by default.</td>
+          </tr>
+          <tr>
+            <td><strong>Fast</strong></td>
+            <td>Smaller / lighter model, single-stream transcription, light timestamps, no
+              cross-file glossary fitting.</td>
+            <td>Quality close to thorough on clean recordings; degrades faster on noisy or
+              multi-speaker audio. Roughly real-time or better. <em>(calibrating)</em></td>
+            <td>Off by default; toggle on per file.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2 id="hosting-tiers">Hosting tiers &mdash; five choices, one disclosure ladder</h2>
+      <p>
+        The tiers are ordered from <strong>most sovereign to most commercial</strong>. Choose
+        higher up the ladder when the file would meaningfully damage you if it leaked; choose lower
+        when you just want it processed without becoming a behavioural-profile data point.
+      </p>
+      <table class="tier-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>What it is</th>
+            <th>Who can see plaintext</th>
+            <th class="counterparty-cell">Cost &amp; speed <em>(calibrating)</em></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1 &mdash; Self-host</td>
+            <td>You run the SoTranscribe server yourself, on your own machine or your own colo.
+              We publish the open-source release; you operate it. We don't see your files at any
+              point.</td>
+            <td>Only you.</td>
+            <td class="counterparty-cell">No fee to us &mdash; your hardware, your time. Speed
+              depends on your hardware. Recommended for orgs with one technical person.</td>
+          </tr>
+          <tr>
+            <td>2 &mdash; Hidden colocation</td>
+            <td>One of several colocations operated by partners who deliberately do <em>not</em>
+              publicize that they host us. You learn one of them on personal request, by writing
+              to us; the others stay unknown to you. The point is to make compelled-disclosure
+              attacks have to enumerate locations they don't have a list of.</td>
+            <td>Us &amp; the host operator at the moment a job runs &mdash; which physical site
+              that is, you don't fully know.</td>
+            <td class="counterparty-cell">Premium pricing. Slowest of the tiers we operate
+              (geographic dispersion). Recommended for unusually sensitive material.</td>
+          </tr>
+          <tr>
+            <td>3 &mdash; Named sovereign colocation</td>
+            <td>Hardware we colocate ourselves at named facilities in <strong>Austria and
+              Switzerland</strong>. Public locations, named operators, contracts visible on
+              request. We control the boxes; the facility provides power, network, physical
+              security.</td>
+            <td>Us &amp; the named facility staff with physical access.</td>
+            <td class="counterparty-cell">Mid-premium pricing. Mid-speed &mdash; serious GPUs but
+              not the absolute frontier. The default we recommend for most paying users.</td>
+          </tr>
+          <tr>
+            <td>4 &mdash; Swiss commercial</td>
+            <td>Hosted on <strong>Infomaniak</strong>'s Swiss infrastructure (the same provider
+              that hosts this domain's email). Reputable EU-jurisdiction provider, audited,
+              long-running. Their business model is your subscription, not your data.</td>
+            <td>Us &amp; Infomaniak &mdash; Swiss jurisdiction, no CLOUD Act exposure.</td>
+            <td class="counterparty-cell">Lower-mid pricing. Faster than tier 3 for many workloads
+              (commercial-grade GPUs at scale).</td>
+          </tr>
+          <tr>
+            <td>5 &mdash; EU budget</td>
+            <td>Hosted on <strong>Contabo</strong> or <strong>Hetzner</strong> in Germany. Cheapest
+              of the operated tiers; same envelope, but the hypervisor layer is owned by a large
+              commercial provider whose internal trust boundaries you cannot personally inspect.
+              Adequate for material that is not actually sensitive but you'd still rather
+              didn't go to a U.S. cloud.</td>
+            <td>Us &amp; the commercial provider &mdash; including, in principle, hypervisor-level
+              access by their staff. German jurisdiction (still EU; no CLOUD Act).</td>
+            <td class="counterparty-cell">Cheapest. Often fastest at the moment, simply because
+              of how much hardware these providers carry. Recommended for routine, non-sensitive
+              transcription where the alternative is otherwise a U.S. cloud.</td>
+          </tr>
+        </tbody>
+        <caption>
+          The deliberate design: each tier <em>up</em> reduces who can see plaintext, at the price
+          of speed and / or money. Pick the lowest tier that matches the data &mdash; and use the
+          <a href="/methodology.html#data-tiers">data-tiers ladder</a> to decide what counts as
+          which.
+        </caption>
+      </table>
+
+      <h2 id="orgs">For organisations &mdash; the admin-grant flow</h2>
+      <p>
+        Organisations have a different operational reality: the person who decides on the
+        sovereignty stance is not always the person whose recordings need processing.
+        For org accounts we offer a simple takeout flow:
+      </p>
+      <ol>
+        <li>The org administrator signs the SoTranscribe service agreement with us, picks the
+          hosting tier, and grants us a scoped access token to the relevant audio sources
+          (a meeting-recording bucket, a voice-memo folder, a recording-platform export).</li>
+        <li>We pull on schedule or on demand, run the same envelope as for individual users, and
+          deliver transcripts back to a destination the admin specifies.</li>
+        <li>Per-team policy controls: which tier each team's audio defaults to, retention
+          horizons, who in the org can read which transcripts.</li>
+      </ol>
+      <p class="small">
+        The takeout flow is intentionally narrow &mdash; we touch only the sources the admin
+        names. We do not sit in the broader cloud account; we do not become a permanent agent
+        in the org's identity provider.
+      </p>
+
+      <h2 id="what-it-doesnt">What this offering does <em>not</em> claim to fix</h2>
+      <p>
+        Honest scope, in keeping with how we treat every project on this site:
+      </p>
+      <ul>
+        <li><strong>Plaintext exists somewhere during processing.</strong> The chosen tier server
+          decrypts your audio in memory to run the model. We don't have a way around that, and
+          neither does anyone else &mdash; if the model has to read it, the model has to read it.
+          The tier system bounds <em>where</em> that happens.</li>
+        <li><strong>The model itself is a counterparty.</strong> Even local open-weight models
+          could in principle be backdoored. We document model provenance per tier and update
+          when the underlying models change. See the upcoming model-research series under
+          <a href="/methodology.html">Methodology</a>.</li>
+        <li><strong>Hardware management engines apply here too.</strong> Any commercial-x86 tier
+          server has the same Intel ME / AMD PSP exposure as your laptop. Tier 1 (self-host on
+          your own libreboot/coreboot or RISC-V hardware) is the only way to escape that, and
+          we deliberately publish that as a tier.</li>
+        <li><strong>State actors with judicial leverage on a tier-3 / tier-4 / tier-5 site.</strong>
+          A Swiss court order against the Swiss tier, served while a job is decrypted in memory,
+          is on the table. We don't pretend otherwise. Tier 1 and tier 2 raise the bar; tier 5
+          deliberately does not.</li>
+      </ul>
+
+      <h2 id="who-this-is-for">Who each tier is honestly for</h2>
+      <table>
+        <thead>
+          <tr><th>If you are&hellip;</th><th>Tier we'd suggest</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A non-techie wanting your Zoom recordings off U.S. cloud transcribers</td><td>Tier 4 or 5.</td></tr>
+          <tr><td>A founder, journalist, or therapist with routine sensitive material</td><td>Tier 3 (named sovereign colo).</td></tr>
+          <tr><td>An organisation with a compliance officer</td><td>Tier 3 with a per-team policy, plus tier 1 for a small &ldquo;keep at home&rdquo; subset.</td></tr>
+          <tr><td>Working on a story / investigation that has consequences if the source list leaks</td><td>Tier 2 (hidden colocation), and read <a href="/advanced.html">Advanced</a>.</td></tr>
+          <tr><td>Already running your own server and want zero new counterparties</td><td>Tier 1 (self-host).</td></tr>
+        </tbody>
+      </table>
+
+      <h2 id="signup">Get on the list</h2>
+      <p>
+        SoTranscribe opens to a small group first &mdash; existing OpenClaw collaborators, a few
+        early friends-of-the-project, then a public waitlist. To get in line, write to
+        <a href="mailto:connect@sovswitch.com?subject=SoTranscribe%20waitlist">connect@sovswitch.com</a>
+        with one sentence on what you'd transcribe and which tier sounds right.
+      </p>
+      <p class="small">
+        We'll publish open pricing once it's calibrated against real cost data. Until then,
+        early users get to weigh in on the pricing model itself &mdash; per minute vs. flat-rate
+        plans, retention defaults, the org-takeout terms.
+      </p>
+
+      <p style="margin-top: 3rem;">
+        Curious about who you're protecting against?
+        <a href="/threats.html#adversaries">See the adversary tiers &rarr;</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell-wide footer-grid">
+      <div>
+        <h4>Sovereign Switch</h4>
+        <p>The pragmatic path off Big Tech. Open source, EU jurisdiction, built for daily drivers.</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/threats.html">Threats</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/methodology.html">Methodology</a></li>
+          <li><a href="/advanced.html">Advanced &rarr;</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:connect@sovswitch.com">connect@sovswitch.com</a></li>
+          <li><a href="mailto:connect@sovswitch.com?subject=SoTranscribe%20waitlist">SoTranscribe waitlist</a></li>
+          <li><a href="/about.html">About this project</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
