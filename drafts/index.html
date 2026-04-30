@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drafts &amp; Explorations — Sovereign Switch</title>
+  <meta name="description" content="Sovereign Switch drafts: concept-level explorations not yet shipping. OpenMac, OpenWindows, three migration paths, local groups. Visible, but flagged as exploration.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="canonical" href="https://sovswitch.com/drafts/">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell-wide nav-inner">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span> Sovereign Switch</a>
+      <div class="nav-links">
+        <a href="https://sotranscribe.com/">SoTranscribe &rarr;</a>
+        <a href="/threats.html">Threats</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/about.html">About</a>
+        <a href="/advanced.html">Advanced &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="prose">
+    <div class="shell">
+      <h1>Drafts &amp; Explorations</h1>
+      <p class="lede">
+        These are <strong>explorations, not commitments</strong>. Concept-level work we want
+        in public so people can react, but that has not yet matured into something we will
+        ship and stand behind. The home page leads with what's actually live; this page is the
+        sketchpad behind it.
+      </p>
+
+      <div class="callout">
+        <strong>How to read this page.</strong> Anything here is something we are still
+        thinking about, watching, or prototyping in private. Treat it as &ldquo;direction we
+        find interesting&rdquo;, not as a roadmap. When something matures, it leaves
+        <code>/drafts</code> and shows up on the home page or in its own product site (the way
+        SoTranscribe did at <a href="https://sotranscribe.com/">sotranscribe.com</a>).
+      </div>
+
+      <h2 id="paths">The three-paths CTA</h2>
+      <p class="small"><em>Was on the home page in v1.0&ndash;v1.3. Demoted in v1.4 because
+        it confuses readers alongside one shipping product.</em></p>
+      <p>
+        The original home-page hypothesis was that readers want to pick a lane based on what
+        they are already comfortable changing. The three lanes:
+      </p>
+      <div class="path-grid">
+        <div class="card">
+          <div class="card-meta">Path A &middot; ~30 min</div>
+          <h3>Move your email and calendar</h3>
+          <p>The single highest-leverage switch. Email is your account-recovery hub for everything else.</p>
+          <p class="small">Where you'd be going: Proton, Tuta, or Infomaniak (Swiss).</p>
+        </div>
+        <div class="card">
+          <div class="card-meta">Path B &middot; ~2 hours</div>
+          <h3>Lock down your phone</h3>
+          <p>De-Google your Android, or set sane defaults on iOS. Keep your apps. Stop the leak.</p>
+          <p class="small">Where you'd be going: GrapheneOS, /e/OS, or hardened iOS.</p>
+        </div>
+        <div class="card">
+          <div class="card-meta">Path C &middot; weekend</div>
+          <h3>Switch your desktop</h3>
+          <p>Familiar UI, open source under the hood. You keep your workflow, you stop bleeding telemetry.</p>
+          <p class="small">Where you'd be going: OpenMac, OpenWindows, or a sane Linux defaults distro.</p>
+        </div>
+      </div>
+      <p class="small">
+        We may bring this back when we have more than one shipping product to anchor it &mdash;
+        at that point a lane-picker stops feeling abstract.
+      </p>
+
+      <h2 id="openmac">OpenMac</h2>
+      <p class="small"><em>Reference, not a build &mdash; we track other people's projects.</em></p>
+      <p>
+        Familiar Mac UI on Linux. The look-and-feel of an OS isn't copyrighted (Apple v.
+        Microsoft 1994), so projects in this space are legally safe. We track the early-stage
+        <a href="https://airyx.org">AiryxOS</a> effort, plus emerging projects like
+        <strong>Aisha</strong> and other macOS-alternative distributions.
+      </p>
+      <p class="small">
+        Status: watching. We do not currently fund, contribute to, or ship anything called
+        OpenMac. A reviews-and-comparison page is something we may write when the underlying
+        projects firm up.
+      </p>
+
+      <h2 id="openwindows">OpenWindows</h2>
+      <p class="small"><em>Reference, not a build &mdash; we track other people's projects.</em></p>
+      <p>
+        Familiar Windows UI on Linux. <a href="https://reactos.org">ReactOS</a> has 30+ years
+        of active development behind it. App-compat layers (Wine, CrossOver, Proton) close
+        most of the practical gap.
+      </p>
+      <p class="small">
+        Status: watching. Same as OpenMac &mdash; we are not building this; we are tracking
+        the people who are.
+      </p>
+
+      <h2 id="local-groups">Local groups &amp; the interactive globe</h2>
+      <p class="small"><em>Was on the home page in v1.1&ndash;v1.3. Demoted in v1.4 because
+        the list was too short to justify the visual weight, and the focus belongs on shipping
+        product.</em></p>
+      <p>
+        Sovereignty is easier with neighbours. The original idea was a directory of mesh
+        networks, hacker spaces, and digital-rights collectives that readers could show up to
+        in person, anchored by an interactive globe with markers per group.
+      </p>
+      <div class="globe-wrap">
+        <svg class="globe" id="globe-svg" viewBox="-50 -50 100 100" role="img" aria-label="Interactive globe — drag to rotate. Vienna marker shown.">
+          <defs>
+            <radialGradient id="sphere" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" stop-color="#1a4ec0"/>
+              <stop offset="60%" stop-color="#003399"/>
+              <stop offset="100%" stop-color="#001f5c"/>
+            </radialGradient>
+            <clipPath id="globe-clip"><circle cx="0" cy="0" r="44"/></clipPath>
+          </defs>
+          <circle cx="0" cy="0" r="44" fill="url(#sphere)" stroke="#FFCC00" stroke-width="0.4" stroke-opacity="0.3"/>
+          <g clip-path="url(#globe-clip)">
+            <g class="globe-rotor globe-rotating">
+              <g fill="#FFCC00" fill-opacity="0.13" stroke="#FFCC00" stroke-width="0.35" stroke-opacity="0.55" stroke-linejoin="round">
+                <path d="M -8 -10 Q 0 -22 18 -22 Q 32 -20 38 -10 Q 36 -2 28 0 Q 14 4 4 2 Q -8 0 -10 -8 Z M 14 -4 Q 22 -2 28 4 Q 26 8 18 7 Z"/>
+                <path d="M 4 1 Q 11 0 15 8 Q 14 18 9 23 Q 3 22 2 15 Q 0 6 4 1 Z"/>
+                <path d="M -32 -22 Q -18 -26 -12 -16 Q -14 -8 -22 -6 Q -30 -8 -34 -14 Q -34 -20 -32 -22 Z M -14 -8 Q -10 -6 -10 -2 Q -12 -2 -14 -6 Z"/>
+                <path d="M -16 4 Q -8 6 -9 14 Q -12 22 -16 24 Q -20 18 -18 10 Q -18 6 -16 4 Z"/>
+                <path d="M 26 14 Q 36 13 36 19 Q 30 22 25 19 Q 24 16 26 14 Z"/>
+                <path d="M -42 26 Q -20 22 0 23 Q 22 22 42 26 Q 22 30 0 30 Q -22 30 -42 26 Z" fill-opacity="0.09"/>
+                <path d="M -10 -28 Q -2 -30 0 -22 Q -4 -18 -10 -22 Z"/>
+                <path d="M -2 -16 Q 1 -16 1 -14 Q -1 -13 -2 -14 Z"/>
+                <path d="M 17 14 Q 19 14 19 18 Q 17 19 16 17 Z"/>
+                <path d="M 38 -10 Q 41 -8 40 -4 Q 38 -5 37 -8 Z"/>
+              </g>
+              <g fill="none" stroke="#FFCC00" stroke-width="0.3" stroke-opacity="0.25">
+                <ellipse cx="0" cy="0" rx="44" ry="14"/>
+                <ellipse cx="0" cy="0" rx="44" ry="28"/>
+                <ellipse cx="0" cy="0" rx="44" ry="42"/>
+                <ellipse cx="0" cy="0" rx="14" ry="44"/>
+                <ellipse cx="0" cy="0" rx="28" ry="44"/>
+                <ellipse cx="0" cy="0" rx="42" ry="44"/>
+                <line x1="-44" y1="0" x2="44" y2="0"/>
+                <line x1="0" y1="-44" x2="0" y2="44"/>
+              </g>
+              <g>
+                <circle cx="4" cy="-19" r="2.0" fill="#FFCC00"/>
+                <circle cx="4" cy="-19" r="3.6" fill="#FFCC00" fill-opacity="0.28"/>
+              </g>
+            </g>
+          </g>
+        </svg>
+        <div class="globe-list">
+          <h3>Vienna &middot; Funkfeuer Wien</h3>
+          <p>Mesh-network community in Vienna. Long-running, hands-on, aligned values. <a href="https://funkfeuer.at">funkfeuer.at</a></p>
+          <p class="small"><strong>Your group here?</strong> <a href="mailto:connect@sovswitch.com?subject=Local%20group">Tell us</a> &mdash; we want this list to be real before it's long.</p>
+        </div>
+      </div>
+      <p class="small">
+        Status: paused until the list of real groups is large enough that the globe earns its
+        weight on the home page.
+      </p>
+
+      <h2 id="incogni">Incogni &mdash; aligned offer</h2>
+      <p class="small"><em>External recommendation, not a project of ours.</em></p>
+      <p>
+        Incogni is a data-broker opt-out service. It contacts the (hundreds of) data brokers
+        that buy and resell your information, and tells them &mdash; on your behalf, with legal
+        authority &mdash; to delete your records and not re-collect. Complementary to switching
+        providers, not a replacement.
+      </p>
+
+      <h2 id="other">Other concept-level items</h2>
+      <p>
+        Several project sketches mentioned in earlier site versions also live here as reference:
+      </p>
+      <ul>
+        <li><strong>secureOpenHarness</strong> &mdash; sandboxed AI execution layer, the
+          security-and-isolation companion to OpenHarness. Concept-level; we like the direction.</li>
+        <li><strong>deGoogle flows</strong> &mdash; step-by-step paths for Gmail, Calendar, Drive,
+          Photos. Calibrated for non-techies. We have the routes; the work to write them up
+          honestly is queued behind shipping product.</li>
+        <li><strong>InterHarness</strong> &mdash; session-management layer for Claude Code.
+          Adjacent to OpenHarness; daily-driver developer tooling.</li>
+        <li><strong>Phone setups, Faraday pouches, RISC-V hardware horizon</strong> &mdash; the
+          extended hardware-and-phones recommendations. Currently still on
+          <a href="/projects.html">Projects</a>; will likely consolidate here when that page
+          retires.</li>
+      </ul>
+
+      <p style="margin-top: 3rem;">
+        <a href="/">&larr; Back to home</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell-wide footer-grid">
+      <div>
+        <h4>Sovereign Switch</h4>
+        <p>The pragmatic path off Big Tech. Open source, EU jurisdiction, built for daily drivers.</p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="https://sotranscribe.com/">SoTranscribe &rarr;</a></li>
+          <li><a href="/threats.html">Threats</a></li>
+          <li><a href="/methodology.html">Methodology</a></li>
+          <li><a href="/advanced.html">Advanced &rarr;</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:connect@sovswitch.com">connect@sovswitch.com</a></li>
+          <li><a href="/about.html">About this project</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="shell-wide footer-changelog">
+      <p class="footer-meta small"><a href="/drafts/">Drafts &amp; explorations</a> &middot; you are here.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var rotor = document.querySelector('.globe-rotor');
+      var svg   = document.getElementById('globe-svg');
+      if (!rotor || !svg) return;
+      rotor.classList.remove('css-spin');
+      rotor.classList.add('js-driven');
+      var angle = 0;
+      var dragging = false;
+      var startX = 0, startAngle = 0;
+      function apply() { rotor.setAttribute('transform', 'rotate(' + angle.toFixed(2) + ')'); }
+      function tick() {
+        if (!dragging) angle = (angle + 0.08) % 360;
+        apply();
+        requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+      function getX(e) { return e.touches ? e.touches[0].clientX : e.clientX; }
+      function down(e) {
+        dragging = true;
+        startX = getX(e);
+        startAngle = angle;
+        svg.classList.add('grabbing');
+        if (e.cancelable) e.preventDefault();
+      }
+      function move(e) {
+        if (!dragging) return;
+        angle = startAngle + (getX(e) - startX) * 0.5;
+        apply();
+        if (e.cancelable) e.preventDefault();
+      }
+      function up() {
+        dragging = false;
+        svg.classList.remove('grabbing');
+      }
+      svg.addEventListener('mousedown', down);
+      window.addEventListener('mousemove', move);
+      window.addEventListener('mouseup', up);
+      svg.addEventListener('touchstart', down, { passive: false });
+      window.addEventListener('touchmove', move, { passive: false });
+      window.addEventListener('touchend', up);
+      window.addEventListener('touchcancel', up);
+    })();
+  </script>
+</body>
+</html>
