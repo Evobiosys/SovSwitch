@@ -386,6 +386,36 @@ footer a:hover { color: var(--eu-blue); text-decoration: underline; }
 .globe-rotor.css-spin { animation: globe-spin 90s linear infinite; }
 .globe-rotor.js-driven { animation: none !important; }
 
+/* about-jakob — personal section on /about */
+.about-jakob {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  margin: 1.5rem 0 2.5rem;
+  padding: 0;                       /* override global section { padding: 3rem 0 } */
+}
+.about-jakob-portrait {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 3px solid var(--eu-yellow);
+  background: var(--eu-blue-soft);
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 1px 4px rgba(14, 17, 22, 0.08);
+}
+.about-jakob-text :is(h2, h3) { margin-top: 0.5rem; }
+.about-jakob-text > p:last-of-type { margin-bottom: 0; }
+@media (min-width: 640px) {
+  .about-jakob {
+    grid-template-columns: 160px 1fr;
+    gap: 1.75rem;
+  }
+  .about-jakob-portrait { width: 160px; height: 160px; }
+  .about-jakob-text :is(h2, h3) { margin-top: 0; }
+}
+
 /* footer changelog block (version history integrated into footer) */
 .footer-changelog {
   border-top: 1px solid var(--grey-light);
