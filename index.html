@@ -214,8 +214,12 @@
         })
           .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
           .then(function () {
-            form.innerHTML = '<p style="color:#f5e642;margin:0">&#10003; Check your inbox to confirm.</p>';
-            note.style.display = 'none';
+            document.getElementById('ss-nl-email').value = '';
+            form.querySelector('button').disabled = false;
+            note.textContent = 'Confirmed — check your inbox to complete your subscription.';
+            note.style.color = '#f5e642';
+            note.style.fontSize = '1rem';
+            note.style.display = 'block';
           })
           .catch(function () {
             form.querySelector('button').disabled = false;
