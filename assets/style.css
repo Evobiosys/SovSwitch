@@ -241,6 +241,19 @@ tr:hover td { background: var(--paper); }
 }
 .newsletter .btn-yellow:hover { background: #ffd633; color: var(--ink); }
 .newsletter small { color: rgba(255,255,255,0.7); display: block; margin-top: 0.75rem; }
+.ss-nl-form {
+  display: flex; gap: 0.5rem; justify-content: center;
+  flex-wrap: wrap; margin-top: 0.75rem;
+}
+.ss-nl-form input[type='email'] {
+  padding: 0.55rem 1rem; border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.12); color: var(--paper);
+  font-size: 0.95rem; min-width: 200px; flex: 1; max-width: 280px;
+  outline: none; transition: border-color 0.15s;
+}
+.ss-nl-form input[type='email']::placeholder { color: rgba(255,255,255,0.5); }
+.ss-nl-form input[type='email']:focus { border-color: var(--eu-yellow); }
 
 /* footer */
 footer {
