@@ -207,7 +207,7 @@
         var email = document.getElementById('ss-nl-email').value.trim();
         if (!email) return;
         form.querySelector('button').disabled = true;
-        fetch('https://subscriber.evobiosys.org/subscribe', {
+        fetch('https://subscriber.sovswitch.com/subscribe', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: email, source: 'sovswitch.com', project: 'SovSwitch' })
