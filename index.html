@@ -174,7 +174,7 @@
           <input type="email" id="ss-nl-email" name="email" placeholder="your@email.com" required>
           <button type="submit" class="btn btn-yellow">Subscribe</button>
         </form>
-        <small id="ss-nl-note">Double opt-in. Unsubscribe anytime. EU-hosted.</small>
+        <small id="ss-nl-note">Double opt-in. Unsubscribe anytime. No tracking. EU-hosted.</small>
       </div>
     </div>
   </section>
@@ -217,31 +217,41 @@
   </footer>
   <script>
     (function () {
+      var ENDPOINT = 'https://subscriber.sovswitch.com/subscribe';
       var form = document.getElementById('ss-nl-form');
       var note = document.getElementById('ss-nl-note');
       if (!form) return;
+      var btn = form.querySelector('button');
+
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         var email = document.getElementById('ss-nl-email').value.trim();
         if (!email) return;
-        form.querySelector('button').disabled = true;
-        fetch('https://subscriber.sovswitch.com/subscribe', {
+        btn.disabled = true;
+        fetch(ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, source: 'sovswitch.com', project: 'SovSwitch' })
+          body: JSON.stringify({ email: email, project: 'sovswitch', source: 'sovswitch.com', gdpr: true })
         })
           .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-          .then(function () {
+          .then(function (data) {
             document.getElementById('ss-nl-email').value = '';
-            form.querySelector('button').disabled = false;
-            note.textContent = 'Confirmed — check your inbox to complete your subscription.';
+            btn.disabled = false;
+            if (data && data.status === 'already_subscribed') {
+              note.textContent = "You're already on the list.";
+            } else {
+              note.textContent = 'Almost there — check your inbox to confirm.';
+            }
             note.style.color = '#f5e642';
             note.style.fontSize = '1rem';
             note.style.display = 'block';
           })
           .catch(function () {
-            form.querySelector('button').disabled = false;
-            note.textContent = 'Something went wrong — try again or email connect@sovswitch.com';
+            btn.disabled = false;
+            note.textContent = 'Subscription service is briefly unavailable — please try again later.';
+            note.style.color = '#ff8a80';
+            note.style.fontSize = '1rem';
+            note.style.display = 'block';
           });
       });
     })();
