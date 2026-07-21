@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sovereign Takeout — get your data out of Big Tech</title>
+  <meta name="description" content="Sovereign Takeout: a local, open-source tool that walks you through exporting your data from eight Big Tech services into one folder on your own machine, then optionally files GDPR erasure requests. v0.1 beta, MIT licensed.">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="canonical" href="https://sovswitch.com/takeout.html">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=atkinson-hyperlegible:400,400i,700,700i&display=swap">
+  <link rel="stylesheet" href="/assets/style.css">
+  <meta property="og:title" content="Sovereign Takeout — get your data out of Big Tech">
+  <meta property="og:description" content="A local, open-source tool that walks you through exporting your data from eight Big Tech services into one folder on your own machine, then optionally files GDPR erasure requests.">
+  <meta property="og:url" content="https://sovswitch.com/takeout.html">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <nav class="nav">
+    <div class="shell-wide nav-inner">
+      <a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span> Sovereign Switch</a>
+      <div class="nav-links">
+        <a href="https://sotranscribe.com/">SoTranscribe &rarr;</a>
+        <a href="/threats.html">Threats</a>
+        <a href="/methodology.html">Methodology</a>
+        <a href="/about.html">About</a>
+        <a href="/advanced.html">Advanced &rarr;</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="shell hero-inner">
+      <span class="eyebrow">Open source &middot; local-first &middot; v0.1 beta</span>
+      <h1>Sovereign Takeout &mdash; all your data, out of Big Tech, into one folder on your Desktop.</h1>
+      <p class="lede">
+        Press start, stay logged in, wait. Sovereign Takeout walks the official export flow of
+        eight services in your own browser, then sorts every archive it finds into
+        <code>~/Desktop/SovereignTakeout/</code>.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#waitlist">No machine to run it on? Join the hosted waitlist &rarr;</a>
+        <a class="btn btn-secondary" href="#how-it-works">How it works</a>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <div class="shell">
+      <h2>Where this fits in the full chain</h2>
+      <p>
+        Sovereign Switch names one move: export your data from every service you use, and
+        re-host it on infrastructure you own. <a href="/#the-full-chain">SoTranscribe is the
+        first link built end to end</a> &mdash; a sovereign replacement for one specific
+        service. <strong>Sovereign Takeout works the other half of the pattern, across all
+        eight services at once: it gets your data out.</strong> The re-hosting side, service
+        by service, is what the rest of Sovereign Switch is building toward.
+      </p>
+    </div>
+  </section>
+
+  <section class="alt" id="how-it-works">
+    <div class="shell">
+      <h2>How it works</h2>
+      <div class="project-grid">
+        <div class="card">
+          <div class="card-meta">Step 1</div>
+          <h3>Press start</h3>
+          <p>Run it locally &mdash; Python 3, no install beyond that. It opens a dashboard on
+          your own machine at <code>127.0.0.1:8377</code>. Nothing leaves localhost.</p>
+        </div>
+        <div class="card">
+          <div class="card-meta">Step 2</div>
+          <h3>Agents walk the export flow &mdash; you stay logged in</h3>
+          <p>A browser agent (or you, clicking through the same prompt as a checklist) walks
+          each service's official data-export page. You handle login and 2FA yourself; the
+          tool and every agent prompt refuse to touch credentials.</p>
+        </div>
+        <div class="card">
+          <div class="card-meta">Step 3</div>
+          <h3>Everything lands sorted</h3>
+          <p>A background watcher recognizes each archive as it arrives, verifies it by
+          inspecting its contents, and moves it into its own folder under
+          <code>~/Desktop/SovereignTakeout/&lt;service&gt;/</code>.</p>
+        </div>
+      </div>
+
+      <h3>Stage 2 &mdash; the right to be forgotten (optional, per service)</h3>
+      <p>
+        Once a service's export is independently verified complete, its card unlocks a GDPR
+        Art. 17 erasure request. Sending one requires a filled-in profile and typing that exact
+        service's name to confirm &mdash; there is no bulk-erasure button anywhere in the tool.
+      </p>
+      <div class="callout">
+        <strong>Erasure is irreversible.</strong> Once a service processes it, there is generally
+        no undo. Stage 2 stays behind a verified-complete export, a filled profile, and your
+        explicit typed confirmation for every single service &mdash; on purpose, so nothing gets
+        deleted by accident or by default.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="shell">
+      <h2>The eight services</h2>
+      <div class="threat-grid">
+        <div class="card"><h3>Google</h3></div>
+        <div class="card"><h3>Facebook</h3></div>
+        <div class="card"><h3>Instagram</h3></div>
+        <div class="card"><h3>X / Twitter</h3></div>
+        <div class="card"><h3>LinkedIn</h3></div>
+        <div class="card"><h3>Amazon</h3></div>
+        <div class="card"><h3>Spotify</h3></div>
+        <div class="card"><h3>Reddit</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="shell">
+      <h2>Local-first, on purpose</h2>
+      <ul>
+        <li><strong>Runs on your machine.</strong> The server binds <code>127.0.0.1</code>
+        only, never <code>0.0.0.0</code>, and makes no outbound network calls of its own.</li>
+        <li><strong>Open source, MIT licensed.</strong> Nothing hidden in how it walks an
+        export flow or what it does with the archive once it lands.</li>
+        <li><strong>No credentials, ever.</strong> The tool never asks for, stores, or
+        transmits a password, 2FA code, or session token &mdash; every agent prompt hands
+        login and verification screens back to you.</li>
+        <li><strong>No telemetry.</strong> Nothing about your usage, service list, or archive
+        contents leaves your machine.</li>
+      </ul>
+      <p class="small">
+        v0.1.0 beta &mdash; open source and usable today for anyone comfortable running a local
+        Python tool. It is not (yet) a packaged download; there is no installer and no app
+        store listing.
+      </p>
+    </div>
+  </section>
+
+  <section id="waitlist">
+    <div class="shell">
+      <div class="newsletter">
+        <h2>No strong machine? A hosted version is coming.</h2>
+        <p>
+          Designed decentralized from the start &mdash; an ephemeral, browser-in-a-container
+          session, run on infrastructure you choose the operator for, not us. Not built yet,
+          and no date to promise. Leave your email and we'll tell you when there's something
+          real to try.
+        </p>
+        <form id="ss-nl-form" class="ss-nl-form">
+          <input type="email" id="ss-nl-email" name="email" placeholder="your@email.com" required>
+          <button type="submit" class="btn btn-yellow">Join the waitlist</button>
+        </form>
+        <small id="ss-nl-note">Double opt-in. Unsubscribe anytime. No tracking. EU-hosted.</small>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="shell-wide footer-grid">
+      <div>
+        <h4>Sovereign Switch</h4>
+        <p>The pragmatic path off Big Tech. Open source, EU jurisdiction, built for daily drivers.</p>
+        <p><small>A project in the EvoBioSys constellation.</small></p>
+      </div>
+      <div>
+        <h4>Read</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="https://sotranscribe.com/">SoTranscribe &rarr;</a></li>
+          <li><a href="/threats.html">Threats</a></li>
+          <li><a href="/methodology.html">Methodology</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:connect@sovswitch.com">connect@sovswitch.com</a></li>
+          <li><a href="/about.html">About this project</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var ENDPOINT = 'https://subscriber.sovswitch.com/subscribe';
+      var form = document.getElementById('ss-nl-form');
+      var note = document.getElementById('ss-nl-note');
+      if (!form) return;
+      var btn = form.querySelector('button');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var email = document.getElementById('ss-nl-email').value.trim();
+        if (!email) return;
+        btn.disabled = true;
+        fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, project: 'sovswitch', source: 'sovswitch.com/takeout', gdpr: true })
+        })
+          .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
+          .then(function (data) {
+            document.getElementById('ss-nl-email').value = '';
+            btn.disabled = false;
+            if (data && data.status === 'already_subscribed') {
+              note.textContent = "You're already on the list.";
+            } else {
+              note.textContent = 'Almost there — check your inbox to confirm.';
+            }
+            note.style.color = '#f5e642';
+            note.style.fontSize = '1rem';
+            note.style.display = 'block';
+          })
+          .catch(function () {
+            btn.disabled = false;
+            note.textContent = 'Subscription service is briefly unavailable — please try again later.';
+            note.style.color = '#ff8a80';
+            note.style.fontSize = '1rem';
+            note.style.display = 'block';
+          });
+      });
+    })();
+  </script>
+</body>
+</html>
