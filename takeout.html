@@ -48,6 +48,15 @@
     </div>
   </header>
 
+  <div id="local-app-banner-zone" hidden>
+    <div class="shell">
+      <div class="callout" id="local-app-callout">
+        <strong>Sovereign Takeout is running on this machine.</strong>
+        <a href="http://127.0.0.1:8377" id="local-app-link">Open your dashboard &rarr;</a>
+      </div>
+    </div>
+  </div>
+
   <section>
     <div class="shell">
       <h2>Where this fits in the full chain</h2>
@@ -100,6 +109,19 @@
         no undo. Stage 2 stays behind a verified-complete export, a filled profile, and your
         explicit typed confirmation for every single service &mdash; on purpose, so nothing gets
         deleted by accident or by default.
+      </div>
+    </div>
+  </section>
+
+  <section id="try-the-demo">
+    <div class="shell">
+      <h2>See it &mdash; try the dashboard</h2>
+      <p>
+        Simulated data, no account is touched &mdash; a click-through of the exact dashboard the
+        real local app shows you, running against an in-page fake backend.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/takeout-demo/">Try the interactive demo &rarr;</a>
       </div>
     </div>
   </section>
@@ -228,6 +250,47 @@
             note.style.display = 'block';
           });
       });
+    })();
+  </script>
+  <script>
+    // Progressive enhancement: if Sovereign Takeout happens to be running
+    // locally on this machine (127.0.0.1:8377), show a small banner
+    // linking straight to it. Silent-fail by design — most visitors do
+    // not have it running, and that must never show an error or shift
+    // the layout.
+    (function () {
+      var zone = document.getElementById('local-app-banner-zone');
+      if (!zone) return;
+      var LOCAL_URL = 'http://127.0.0.1:8377/api/state';
+      var TIMEOUT_MS = 800;
+
+      var controller = ('AbortController' in window) ? new AbortController() : null;
+      var timer = setTimeout(function () {
+        if (controller) controller.abort();
+      }, TIMEOUT_MS);
+
+      fetch(LOCAL_URL, {
+        mode: 'no-cors',
+        signal: controller ? controller.signal : undefined
+      })
+        .then(function () {
+          clearTimeout(timer);
+          // 'no-cors' always resolves with an opaque response on any
+          // reply (even a non-2xx one) and only rejects on a network
+          // failure — reaching .then at all means something is
+          // listening on 127.0.0.1:8377, which is enough to show the
+          // banner without needing to read the (unreadable) body.
+          zone.hidden = false;
+        })
+        .catch(function (err) {
+          clearTimeout(timer);
+          // Nothing listening locally — the expected case for almost
+          // every visitor. One quiet debug line, no banner, no layout
+          // shift.
+          if (window.console && console.debug) {
+            console.debug('Sovereign Takeout local-app check: not detected', err && err.message);
+          }
+        });
     })();
   </script>
 </body>

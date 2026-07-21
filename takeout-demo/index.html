@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sovereign Takeout — Demo</title>
+<meta name="description" content="Interactive demo of the Sovereign Takeout dashboard, running against simulated data. The real app runs locally on your own machine.">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="canonical" href="https://sovswitch.com/takeout-demo/">
+<!-- app UI stylesheet, copied verbatim from sov_takeout/ui/style.css -->
+<link rel="stylesheet" href="./style.css">
+<style>
+  /* Demo-only banner — not part of the real app UI. Kept inline here
+     rather than in style.css so style.css can stay a verbatim copy of
+     the source repo's file. */
+  .demo-banner {
+    background: #2f6f4f;
+    color: #ffffff;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    padding: 0.6rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+  .demo-banner strong {
+    font-weight: 700;
+  }
+  .demo-banner a {
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .demo-banner a:hover {
+    filter: brightness(1.15);
+  }
+  @media (prefers-color-scheme: dark) {
+    .demo-banner {
+      background: #1d3d2c;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="demo-banner">
+  <strong>Interactive demo — simulated data.</strong>
+  The real app runs on your machine.
+  <a href="/takeout.html">&larr; Back to Sovereign Takeout</a>
+</div>
+
+<header class="app-header">
+  <div class="header-row">
+    <div class="wordmark">Sovereign&nbsp;Takeout</div>
+    <button id="about-link" class="link-btn" type="button">About / what you get</button>
+    <div class="output-dir" id="output-dir">loading…</div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    <div class="progress-label" id="progress-label">0 of 8 verified</div>
+  </div>
+  <div class="profile-form" id="profile-form">
+    <span class="profile-label">For erasure letters:</span>
+    <input type="text" id="profile-name" placeholder="Your full name" autocomplete="name">
+    <input type="email" id="profile-email" placeholder="you@example.com" autocomplete="email">
+    <button id="profile-save" class="secondary-btn" type="button">Save profile</button>
+    <span id="profile-status" class="profile-status"></span>
+  </div>
+</header>
+
+<main>
+  <section id="start-zone">
+    <p class="lede">
+      One button — BrowserOS agents walk the official export flows of
+      your eight Big-Tech services while you stay logged in. Every
+      archive lands, sorted, in one folder.
+    </p>
+    <button id="press-start" class="press-start-btn" type="button">Press Start</button>
+  </section>
+
+  <section id="dashboard" hidden>
+    <div class="dashboard-toolbar">
+      <button id="launch-all" class="secondary-btn" type="button">Launch all in BrowserOS</button>
+    </div>
+    <div id="cards" class="cards"></div>
+  </section>
+</main>
+
+<div id="prompt-modal" class="modal" hidden>
+  <div class="modal-content">
+    <h2 id="prompt-modal-title">Agent prompt</h2>
+    <pre id="prompt-modal-text"></pre>
+    <div class="modal-actions">
+      <button id="prompt-modal-copy" type="button">Copy</button>
+      <button id="prompt-modal-close" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<div id="explainer-modal" class="modal" hidden>
+  <div class="modal-content">
+    <h2 id="explainer-modal-title">About / what you get</h2>
+    <pre id="explainer-modal-text"></pre>
+    <div class="modal-actions">
+      <button id="explainer-modal-copy" type="button">Copy</button>
+      <button id="explainer-modal-close" type="button">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- demo_backend.js MUST load before app.js: it wraps window.fetch so
+     every /api/* call app.js makes is answered by the in-memory
+     simulated backend instead of a real local server. -->
+<script src="./demo_backend.js"></script>
+<!-- app.js, copied byte-identical from sov_takeout/ui/app.js in the
+     source repo — no logic fork, no path edits (it only ever calls
+     absolute /api/* paths, which demo_backend.js intercepts). -->
+<script src="./app.js"></script>
+</body>
+</html>
